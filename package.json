@@ -1,0 +1,29 @@
+{
+  "name": "aleksandergondek.github.io",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Personal website and blog",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleksanderGondek/aleksandergondek.github.io.git"
+  },
+  "keywords": [
+    "aleksander",
+    "gondek",
+    "github",
+    "website",
+    "blog",
+    "pelican",
+    "python"
+  ],
+  "author": "Aleksander Gondek <gondekaleksander@hotmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/AleksanderGondek/aleksandergondek.github.io/issues"
+  },
+  "homepage": "https://github.com/AleksanderGondek/aleksandergondek.github.io#readme"
+}
