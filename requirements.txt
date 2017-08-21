@@ -1,0 +1,4 @@
+pip-review
+ipython
+pelican
+markdown

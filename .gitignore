@@ -1,2 +1,7 @@
-# Ignore npm packages
-node_modules/
+# Dependency directories
+node_modules
+jspm_packages
+virtualenv
+
+# Python
+__pycache__
