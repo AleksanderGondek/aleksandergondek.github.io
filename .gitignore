@@ -5,3 +5,6 @@ virtualenv
 
 # Python
 __pycache__
+
+# Pelican configs
+pelican-website/publishconf.py
