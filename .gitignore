@@ -8,3 +8,6 @@ __pycache__
 
 # Pelican configs
 pelican-website/publishconf.py
+
+# Pelican output
+pelican-website/output

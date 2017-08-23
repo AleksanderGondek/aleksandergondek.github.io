@@ -9,12 +9,12 @@ let helpers = require("./gulp-helpers");
 
 gulp.task("createVirtualenv", () => {
     helpers.log.info("Attempting to create virtualenv..");
-    return exec("virtualenv virtualenv")
+    return exec("virtualenv pelican-website/virtualenv")
         .then( () => {
             helpers.log.success("virtualenv created!");
 
             helpers.log.info("Attempting to install virtualenv requirements..");
-            return exec(require.resolve("./virtualenv/Scripts/pip.exe") + " install -r " + "./requirements.txt")
+            return exec(require.resolve("./pelican-website/virtualenv/Scripts/pip.exe") + " install -r " + "./requirements.txt")
                 .then( () => {
                     helpers.log.info("Requirements installed!!");
                 });
