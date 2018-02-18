@@ -6,4 +6,4 @@ My personal website
 
 Full copyright notice
 ---
-**© 2017** Aleksander Gondek - All rights reserved.
+**© 2017 - 2018** Aleksander Gondek - All rights reserved.
