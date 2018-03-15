@@ -1,11 +1,10 @@
 My personal website
 ---
 ![License](https://img.shields.io/badge/License-Apache%20License%202.0-blue.svg?style=flat-square)
-![Html5](/docs/images/html5-badge-h-css3-semantics.png)
-![Boostrap4](https://img.shields.io/badge/Bootstrap%204-blue.svg?style=flat-square)
-![Typescript](https://img.shields.io/badge/Typescript-blue.svg?style=flat-square)
+![Typescript](https://img.shields.io/badge/Typescript-2.7.2-blue.svg?style=flat-square)
+![Boostrap4](https://img.shields.io/badge/Bootstrap-4.0.0-blue.svg?style=flat-square)
 
-This repository contains source-code for my webiste, as well as its contents.
+This repository contains source-code for my website, as well as its contents.
 
 
 Branches
