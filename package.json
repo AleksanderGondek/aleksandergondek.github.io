@@ -2,13 +2,22 @@
     "name": "aleksandergondek.github.io",
     "version": "0.0.1",
     "description": "This repository contains source-code for my website, as well as its contents.",
-    "homepage": "https://aleksandergondek.github.io",
-    "main": "N/A",
-    "repository": "git@github.com:AleksanderGondek/aleksandergondek.github.io.git",
-    "author": "Aleksander Gondek",
     "license": "Apache-2.0",
+    "homepage": "https://aleksandergondek.github.io",
+    "repository": "git@github.com:AleksanderGondek/aleksandergondek.github.io.git",
     "private": true,
+    "author": "Aleksander Gondek",
+    "main": "N/A",
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
     "dependencies": {
-        "gatsby-cli": "^1.1.46"
+        "gatsby": "^1.9.238",
+        "gatsby-cli": "^1.1.46",
+        "gatsby-link": "^1.6.39",
+        "gatsby-plugin-react-helmet": "^2.0.8",
+        "react-helmet": "^5.2.0"
     }
 }
