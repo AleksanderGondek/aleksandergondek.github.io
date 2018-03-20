@@ -7,5 +7,8 @@
     "repository": "git@github.com:AleksanderGondek/aleksandergondek.github.io.git",
     "author": "Aleksander Gondek",
     "license": "Apache-2.0",
-    "private": true
+    "private": true,
+    "dependencies": {
+        "gatsby-cli": "^1.1.46"
+    }
 }
