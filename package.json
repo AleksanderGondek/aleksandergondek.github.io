@@ -1,0 +1,11 @@
+{
+    "name": "aleksandergondek.github.io",
+    "version": "0.0.1",
+    "description": "This repository contains source-code for my website, as well as its contents.",
+    "homepage": "https://aleksandergondek.github.io",
+    "main": "N/A",
+    "repository": "git@github.com:AleksanderGondek/aleksandergondek.github.io.git",
+    "author": "Aleksander Gondek",
+    "license": "Apache-2.0",
+    "private": true
+}
