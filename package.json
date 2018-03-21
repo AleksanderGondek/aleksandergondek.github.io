@@ -14,10 +14,15 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
+        "@types/node": "^9.4.7",
+        "@types/react": "^16.0.40",
+        "@types/react-dom": "^16.0.4",
+        "@types/react-helmet": "^5.0.5",
         "gatsby": "^1.9.238",
         "gatsby-cli": "^1.1.46",
         "gatsby-link": "^1.6.39",
         "gatsby-plugin-react-helmet": "^2.0.8",
+        "gatsby-plugin-typescript": "^1.4.18",
         "react-helmet": "^5.2.0"
     }
 }
