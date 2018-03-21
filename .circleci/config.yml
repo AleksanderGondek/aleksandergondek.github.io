@@ -3,7 +3,7 @@ jobs:
   lint_and_build:
     docker:
       - image: circleci/node:8.10.0-stretch-browsers
-    working_directory: /blog
+    working_directory: ~/blog
     steps:
       - checkout
       - run:
