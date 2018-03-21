@@ -1,8 +1,8 @@
-import * as React from "react"
-import Helmet from "react-helmet"
+import * as React from "react";
+import Helmet from "react-helmet";
 
-import Header from "../components/Header"
-import "./index.css"
+import Header from "../components/Header";
+import "./index.css";
 
 const TemplateWrapper = ({ children }: { children: any }) => (
     <div>
@@ -25,6 +25,6 @@ const TemplateWrapper = ({ children }: { children: any }) => (
             {children()}
         </div>
     </div>
-)
+);
 
-export default TemplateWrapper
+export default TemplateWrapper;
