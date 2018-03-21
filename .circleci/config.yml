@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  lint_and_build:
+    docker:
+      - image: circleci/node:8.10.0-stretch-browsers
+    working_directory: /blog
+    steps:
+      - checkout
+      - run:
+          name: Install node dependencies
+          command: yarn
+      - run:
+          name: Lint
+          command: yarn run lint
+      - run:
+          name: Build
+          command: yarn run build
+workflows:
+  version: 2
+  main_flow:
+    jobs:
+      - lint_and_build
