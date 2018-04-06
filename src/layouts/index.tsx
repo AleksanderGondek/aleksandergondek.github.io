@@ -2,7 +2,7 @@ import * as React from "react";
 import Helmet from "react-helmet";
 
 import { HeaderComponent } from "../components/Header";
-import "./index.scss";
+import "./indexStyle.scss";
 
 interface IDefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
     location: { pathname: string };
@@ -12,7 +12,7 @@ interface IDefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
 class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, void> {
     render() {
             return (
-            <div>
+            <div className="mainContainer">
                 <Helmet
                     title="Gatsby Default Starter"
                     meta={[
