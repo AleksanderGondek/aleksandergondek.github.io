@@ -6359,7 +6359,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -6544,6 +6544,13 @@ react-dom@^15.6.0:
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
+
+react-grid-system@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/react-grid-system/-/react-grid-system-3.1.2.tgz#23c5e58b07e8ee0f7f42ef8c03c7b78c240a3458"
+  dependencies:
+    lodash "^4.17.4"
+    prop-types "^15.6.0"
 
 react-helmet@^5.2.0:
   version "5.2.0"
