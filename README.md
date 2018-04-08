@@ -1,8 +1,9 @@
 My personal website
 ---
+[![CircleCI](https://circleci.com/gh/AleksanderGondek/aleksandergondek.github.io/tree/development.svg?style=svg)](https://circleci.com/gh/AleksanderGondek/aleksandergondek.github.io/tree/development)
 ![License](https://img.shields.io/badge/License-Apache%20License%202.0-blue.svg?style=flat-square)
 ![Typescript](https://img.shields.io/badge/Typescript-2.7.2-blue.svg?style=flat-square)
-![Boostrap4](https://img.shields.io/badge/Bootstrap-4.0.0-blue.svg?style=flat-square)
+
 
 This repository contains source-code for my website, as well as its contents.
 
