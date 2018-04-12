@@ -1,4 +1,13 @@
 .sideBarContent {
     height: 100%;
     background-color: rgb(255, 255, 255);
+
+    .externalPages {
+        text-align: center;
+
+        svg {
+            margin-left: 0.2em;
+            margin-right: 0.2em;
+        }
+    }
 }
