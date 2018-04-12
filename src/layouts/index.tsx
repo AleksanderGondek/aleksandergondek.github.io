@@ -9,7 +9,9 @@ import { SideBarContentComponent } from "../components/SideBarContent/sideBarCon
 
 import "./defaultLayout.scss";
 
-const mql = window.matchMedia("(min-width: 800px)");
+const mql = (typeof window !== undefined &&
+             typeof window !== "undefined" &&
+             window) ? window.matchMedia("(min-width: 800px)") : null;
 
 interface IDefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
     location: { pathname: string };
@@ -21,6 +23,10 @@ interface IDefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
 
 class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLayoutProps> {
     componentWillMount() {
+        if (mql === null) {
+            return;
+        }
+
         mql.addListener(this.mediaQueryChanged);
         this.setState({ mql, sidebarDocked: mql.matches });
     }
@@ -40,6 +46,10 @@ class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLay
 
     render() {
         const sidebarContent = (<SideBarContentComponent/>);
+        if (this.state === null) {
+            return null;
+        }
+
         return (
             <Sidebar
                 sidebar={sidebarContent}
