@@ -11,7 +11,7 @@ class LogoComponent extends React.PureComponent<{}, {}> {
         return (
             <div className={"logoComponent"}>
                 <img src={logo} alt="Logo" className={"image"} />
-                <h2>Aleksander's Blog</h2>
+                <h2>Alexander's Blog</h2>
             </div>
         );
     }
