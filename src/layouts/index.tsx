@@ -2,6 +2,7 @@ import * as React from "react";
 import Helmet from "react-helmet";
 import Sidebar from "react-sidebar";
 
+import { FooterComponent } from "../components/Footer/footer";
 import { HeaderComponent } from "../components/Header";
 import { MiniSideBarComponent } from "../components/MiniSideBar/sideBar";
 import { SideBarContentComponent } from "../components/SideBarContent/sideBarContent";
@@ -59,6 +60,7 @@ class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLay
                 />
                 <div className="content">
                     {this.props.children()}
+                    <FooterComponent/>
                 </div>
             </Sidebar>
         );
