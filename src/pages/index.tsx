@@ -7,7 +7,8 @@ const IndexPage = () => (
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
         <Link to="/page-2/">Go to page 2</Link>
-
+        <br />
+        <br />
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dui sapien, tempus at interdum non, luctus vel mauris. Pellentesque maximus sapien lectus, id mollis odio mattis ut. Quisque condimentum mattis purus vel facilisis. Ut ac elit augue. Suspendisse tempus aliquet volutpat. Fusce vel nulla at eros efficitur cursus a sed erat. Praesent vel nibh eu lorem vulputate maximus. Pellentesque mi odio, fringilla sed lacus id, dignissim porttitor mi.
             Nunc eget consequat tellus. Duis at facilisis libero. Curabitur interdum luctus velit, id placerat lorem finibus eget. Nullam fringilla mauris eget odio feugiat accumsan. Fusce mattis pretium lacus, ac euismod magna dapibus dapibus. Integer blandit mauris id mi luctus, ut suscipit justo condimentum. Donec ultrices orci quis viverra tempor. Mauris sed magna magna. Maecenas sit amet dolor ac eros vehicula iaculis id eu tellus. Nullam iaculis at massa vitae euismod. Phasellus ex tellus, accumsan at rhoncus in, aliquet vel orci. Vestibulum erat mi, dapibus quis enim a, placerat rutrum neque. Suspendisse potenti. Morbi quam leo, maximus sed est a, sollicitudin luctus magna. Nullam in massa nisl. Pellentesque nec nulla in metus viverra aliquet.

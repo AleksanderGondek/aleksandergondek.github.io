@@ -4,6 +4,9 @@ import Sidebar from "react-sidebar";
 
 import { HeaderComponent } from "../components/Header";
 import { LogoComponent } from "../components/Logo/logo";
+import { SideBarMenuComponent } from "../components/SideBarMenu/sideBarMenu";
+
+import "./defaultLayout.scss";
 
 const mql = window.matchMedia("(min-width: 800px)");
 
@@ -38,8 +41,7 @@ class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLay
     }
 
     render() {
-        const sidebarContent = <b>Sidebar content</b>;
-
+        const sidebarContent = <div><LogoComponent/><SideBarMenuComponent/></div>;
         return (
             <Sidebar
                 sidebar={sidebarContent}
@@ -54,7 +56,7 @@ class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLay
                         { name: "keywords", content: "sample, something" },
                     ]}
                 />
-                <div>
+                <div className="content">
                     {this.props.children()}
                 </div>
             </Sidebar>
