@@ -32,7 +32,7 @@ module.exports = class HTML extends React.Component<IHtmlProps, {}> {
             );
         }
         return (
-            <html {...this.props.htmlAttributes}>
+            <html {...this.props.htmlAttributes} style={{overflowY: "hidden"}}>
                 <head>
                     <meta charSet="utf-8" />
                     <meta httpEquiv="x-ua-compatible" content="ie=edge" />

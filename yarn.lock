@@ -74,6 +74,12 @@
     "@types/history" "*"
     "@types/react" "*"
 
+"@types/react-sidebar@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@types/react-sidebar/-/react-sidebar-2.2.3.tgz#af87fb038eaf6327dcb30d12566f9a0d86614bf2"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^16.0.40":
   version "16.0.40"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.40.tgz#caabc2296886f40b67f6fc80f0f3464476461df9"
@@ -6599,6 +6605,10 @@ react-side-effect@^1.1.0:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
+
+react-sidebar@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/react-sidebar/-/react-sidebar-2.3.2.tgz#ec140bea8a6f5fa3d8ea7a56479665b44cf4f9cf"
 
 react-typography@^0.16.1:
   version "0.16.13"
