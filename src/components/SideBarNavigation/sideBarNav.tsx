@@ -1,9 +1,9 @@
 import Link from "gatsby-link";
 import * as React from "react";
 
-import "./sideBarMenu.scss";
+import "./sideBarNavStyle.scss";
 
-class SideBarMenuComponent extends React.PureComponent<{}, {}> {
+class SideBarNavComponent extends React.PureComponent<{}, {}> {
     render() {
         return (
             <ul className="sideBarMenuList">
@@ -16,4 +16,4 @@ class SideBarMenuComponent extends React.PureComponent<{}, {}> {
     }
 }
 
-export { SideBarMenuComponent };
+export { SideBarNavComponent };

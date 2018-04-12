@@ -3,8 +3,8 @@ import Helmet from "react-helmet";
 import Sidebar from "react-sidebar";
 
 import { HeaderComponent } from "../components/Header";
-import { LogoComponent } from "../components/Logo/logo";
-import { SideBarMenuComponent } from "../components/SideBarMenu/sideBarMenu";
+import { MiniSideBarComponent } from "../components/MiniSideBar/sideBar";
+import { SideBarContentComponent } from "../components/SideBarContent/sideBarContent";
 
 import "./defaultLayout.scss";
 
@@ -19,10 +19,6 @@ interface IDefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLayoutProps> {
-    constructor(props: any) {
-        super(props);
-    }
-
     componentWillMount() {
         mql.addListener(this.mediaQueryChanged);
         this.setState({ mql, sidebarDocked: mql.matches });
@@ -34,20 +30,21 @@ class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLay
 
     mediaQueryChanged = () => {
         this.setState({ sidebarDocked: this.state.mql.matches });
+        this.setState({ sidebarOpen: this.state.mql.matches });
     }
 
-    onSetSidebarOpen = () => {
-        this.setState({ sidebarOpen: true });
+    toggleSidebarState = () => {
+        this.setState({ sidebarOpen: !this.state.sidebarOpen });
     }
 
     render() {
-        const sidebarContent = <div><LogoComponent/><SideBarMenuComponent/></div>;
+        const sidebarContent = (<SideBarContentComponent/>);
         return (
             <Sidebar
                 sidebar={sidebarContent}
                 open={this.state.sidebarOpen}
                 docked={this.state.sidebarDocked}
-                onSetOpen={this.onSetSidebarOpen}
+                onSetOpen={this.toggleSidebarState}
             >
                 <Helmet
                     title="Gatsby Default Starter"
@@ -55,6 +52,10 @@ class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLay
                         { name: "description", content: "Sample" },
                         { name: "keywords", content: "sample, something" },
                     ]}
+                />
+                <MiniSideBarComponent
+                    isSideMenuOpened={this.state.sidebarDocked}
+                    toggleSideBar={this.toggleSidebarState}
                 />
                 <div className="content">
                     {this.props.children()}
