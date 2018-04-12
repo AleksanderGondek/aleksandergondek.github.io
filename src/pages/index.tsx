@@ -1,6 +1,7 @@
 import Link from "gatsby-link";
 import * as React from "react";
 
+// tslint:disable:max-line-length
 const IndexPage = () => (
     <div>
         <h1>Hi people</h1>
