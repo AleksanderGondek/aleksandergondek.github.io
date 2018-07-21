@@ -6,18 +6,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { LogoComponent } from "../../components/Logo/logo";
 import { SideBarNavComponent } from "../../components/SideBarNavigation/sideBarNav";
+import { ISiteMetadataProps } from "../../graphQl/siteMetadata";
 
 import "./sideBarContentStyle.scss";
 
-class SideBarContentComponent extends React.PureComponent<{}, {}> {
+class SideBarContentComponent extends React.PureComponent<ISiteMetadataProps, {}> {
     render() {
         return (
             <div className="sideBarContent">
-                <LogoComponent/>
-                <SideBarNavComponent/>
+                <LogoComponent data={this.props.data}/>
+                <SideBarNavComponent />
                 <div className="externalPages">
-                    <FontAwesomeIcon icon={faGithub}/>
-                    <FontAwesomeIcon icon={faLinkedinIn}/>
+                    <FontAwesomeIcon icon={faGithub} />
+                    <FontAwesomeIcon icon={faLinkedinIn} />
                 </div>
             </div>
         );

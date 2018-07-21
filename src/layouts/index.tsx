@@ -5,6 +5,7 @@ import Sidebar from "react-sidebar";
 import { FooterComponent } from "../components/Footer/footer";
 import { MiniSideBarComponent } from "../components/MiniSideBar/sideBar";
 import { SideBarContentComponent } from "../components/SideBarContent/sideBarContent";
+import { ISiteMetadata, ISiteMetadataProps } from "../graphQl/siteMetadata";
 
 import "./defaultLayout.scss";
 
@@ -12,9 +13,10 @@ const mql = (typeof window !== undefined &&
              typeof window !== "undefined" &&
              window) ? window.matchMedia("(min-width: 800px)") : null;
 
-interface IDefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
+interface IDefaultLayoutProps extends ISiteMetadataProps {
     location: { pathname: string };
     children: any;
+    data: ISiteMetadata;
     mql: MediaQueryList;
     sidebarOpen: boolean;
     sidebarDocked: boolean;
@@ -44,7 +46,7 @@ class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLay
     }
 
     render() {
-        const sidebarContent = (<SideBarContentComponent/>);
+        const sidebarContent = (<SideBarContentComponent data={this.props.data} />);
         if (this.state === null) {
             return null;
         }
@@ -75,5 +77,11 @@ class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLay
         );
     }
 }
+
+export const rootQuery = graphql`
+    query rootQuery {
+        ...siteMetadataQuery
+    }
+`;
 
 export default DefaultLayout;
