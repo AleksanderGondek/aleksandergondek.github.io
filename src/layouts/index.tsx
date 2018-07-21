@@ -3,7 +3,6 @@ import Helmet from "react-helmet";
 import Sidebar from "react-sidebar";
 
 import { FooterComponent } from "../components/Footer/footer";
-import { HeaderComponent } from "../components/Header";
 import { MiniSideBarComponent } from "../components/MiniSideBar/sideBar";
 import { SideBarContentComponent } from "../components/SideBarContent/sideBarContent";
 
