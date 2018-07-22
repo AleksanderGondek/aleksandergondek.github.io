@@ -5,6 +5,9 @@
  */
 
 // tslint:disable-next-line:no-var-requires
+const { createFilePath } = require("gatsby-source-filesystem");
+
+// tslint:disable-next-line:no-var-requires
 const path = require("path");
 const allMarkDownQuery = `{
     allMarkdownRemark(
@@ -14,27 +17,45 @@ const allMarkDownQuery = `{
         edges {
             node {
                 frontmatter {
-                    path
+                    date
+                    title
+                }
+                fields {
+                    slug
                 }
             }
         }
     }
 }`;
 
+exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
+    const { createNodeField } = boundActionCreators
+    if (node.internal.type === "MarkdownRemark") {
+        const slug = createFilePath({ node, getNode, basePath: "pages" })
+        createNodeField({
+            node,
+            name: "slug",
+            value: slug,
+        })
+    }
+};
+
 exports.createPages = ({ boundActionCreators, graphql }) => {
     const { createPage } = boundActionCreators;
     const blogPostTemplate = path.resolve(`src/templates/blog-post.tsx`);
 
-    return graphql(allMarkDownQuery).then( result => {
+    return graphql(allMarkDownQuery).then(result => {
         if (result.errors) {
             return Promise.reject(result.errors);
         }
 
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
             createPage({
-                path: node.frontmatter.path,
+                path: node.fields.slug,
                 component: blogPostTemplate,
-                context: {} // additional data can be passed via context
+                context: {  // additional data can be passed via context
+                    slug: node.fields.slug,
+                }
             });
         });
     });

@@ -8,29 +8,33 @@ interface IBlogPostTemplateProps {
             excerpt: string
             frontmatter: {
                 date: string,
-                path: string,
                 title: string,
+            },
+            fields: {
+                slug: string,
             },
         },
     };
 }
 
-const BlogPostTemplate: React.StatelessComponent<IBlogPostTemplateProps> = ( blogData ) => (
+const BlogPostTemplate: React.StatelessComponent<IBlogPostTemplateProps> = ({ data }) => (
     <div>
-        <h1>{blogData.data.markdownRemark.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: blogData.data.markdownRemark.html }} />
+        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
     </div>
 );
 
 export default BlogPostTemplate;
 export const blogPostByPathQuery = graphql`
   query blogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(fields: { slug: { eq: $path } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
+        date(formatString: "DD MMMM YYYY, HH:MM z")
         title
+      }
+      fields {
+          slug
       }
     }
   }
