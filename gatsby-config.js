@@ -13,5 +13,18 @@ module.exports = {
               pathToConfigModule: "src/typography/global.js",
             },
         },
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                path: `${__dirname}/content`,
+                name: "pages",
+            }
+        },
+        {
+            resolve: "gatsby-transformer-remark",
+            options: {
+                plugins: []
+            }
+        },
     ],
 };
