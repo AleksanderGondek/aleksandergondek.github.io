@@ -7,9 +7,9 @@ class SideBarNavComponent extends React.PureComponent<{}, {}> {
     render() {
         return (
             <ul className="sideBarMenuList">
-                <li>Home</li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/tags">Tags</Link></li>
                 <li>About me</li>
-                <li>Archive</li>
                 <li>Resources</li>
             </ul>
         );

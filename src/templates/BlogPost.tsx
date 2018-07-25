@@ -18,6 +18,7 @@ interface IBlogPostTemplateProps extends IBlogPostsStatsProps {
             frontmatter: {
                 date: string,
                 title: string,
+                tags: string[],
             },
             fields: {
                 slug: string,
@@ -69,6 +70,7 @@ export const blogPostByPathQuery = graphql`
       frontmatter {
         date(formatString: "DD MMMM YYYY, HH:MM z")
         title
+        tags
       }
       fields {
           slug

@@ -6,6 +6,7 @@
 
 // tslint:disable-next-line:no-var-requires
 const { createFilePath } = require("gatsby-source-filesystem");
+const _ = require("lodash");
 
 // tslint:disable-next-line:no-var-requires
 const path = require("path");
@@ -19,6 +20,7 @@ const allMarkDownQuery = `{
                 frontmatter {
                     date
                     title
+                    tags
                 }
                 fields {
                     slug
@@ -43,19 +45,32 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 exports.createPages = ({ boundActionCreators, graphql }) => {
     const { createPage } = boundActionCreators;
     const blogPostTemplate = path.resolve(`src/templates/BlogPost.tsx`);
+    const blogTagTemplate = path.resolve(`src/templates/BlogTag.tsx`);
 
     return graphql(allMarkDownQuery).then(result => {
         if (result.errors) {
             return Promise.reject(result.errors);
         }
-
+        
+        let tags = [];
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+            tags = tags.concat(node.frontmatter.tags);
             createPage({
                 path: node.fields.slug,
                 component: blogPostTemplate,
                 context: {  // additional data can be passed via context
                     slug: node.fields.slug,
-                }
+                },
+            });
+        });
+
+        _.uniq(tags).forEach(tag => {
+            createPage({
+                path: `/tags/${_.kebabCase(tag)}/`,
+                component: blogTagTemplate,
+                context: {
+                    tag,
+                },
             });
         });
     });
