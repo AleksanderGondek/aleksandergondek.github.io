@@ -42,7 +42,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
     const { createPage } = boundActionCreators;
-    const blogPostTemplate = path.resolve(`src/templates/BlogPost.tsx`);
+    const blogPostTemplate = path.resolve(`src/templates/blog-post.tsx`);
 
     return graphql(allMarkDownQuery).then(result => {
         if (result.errors) {
