@@ -4,11 +4,11 @@ import * as faGithub from "@fortawesome/fontawesome-free-brands/faGithub";
 import * as faLinkedinIn from "@fortawesome/fontawesome-free-brands/faLinkedinIn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { ISiteMetadataProps } from "../../graphQl/siteMetadata";
-import { LogoComponent } from "../Logo/logo";
-import { SideBarNavComponent } from "../SideBarNavigation/sideBarNav";
+import { ISiteMetadataProps } from "../../graphQl/SiteMetadata";
+import { LogoComponent } from "../Logo/Logo";
+import { SideBarNavComponent } from "../SideBarNavigation/SideBarNavigation";
 
-import "./sideBarContentStyle.scss";
+import "./SideBarContentStyle.scss";
 
 class SideBarContentComponent extends React.PureComponent<ISiteMetadataProps, {}> {
     render() {

@@ -3,7 +3,7 @@ import * as React from "react";
 import * as faBars from "@fortawesome/fontawesome-free-solid/faBars";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import "./miniSideBarStyle.scss";
+import "./SideBarStyle.scss";
 
 interface IMiniSideBarProperties extends React.HTMLProps<HTMLDivElement> {
     isSideMenuOpened: boolean;

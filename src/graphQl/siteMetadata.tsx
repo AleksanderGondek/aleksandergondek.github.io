@@ -1,4 +1,4 @@
-export interface ISiteMetadata {
+interface ISiteMetadata {
     site: {
         siteMetadata: {
             title: string,
@@ -7,7 +7,7 @@ export interface ISiteMetadata {
     };
 }
 
-export interface ISiteMetadataProps {
+interface ISiteMetadataProps {
     data: ISiteMetadata;
 }
 
@@ -21,3 +21,5 @@ export const siteMetadataQuery = graphql`
         }
     }
 `;
+
+export { ISiteMetadata, ISiteMetadataProps };

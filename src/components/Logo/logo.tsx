@@ -1,9 +1,9 @@
 import Link from "gatsby-link";
 import * as React from "react";
 
-import { ISiteMetadataProps } from "../../graphQl/siteMetadata";
+import { ISiteMetadataProps } from "../../graphQl/SiteMetadata";
 
-import "./logo.scss";
+import "./LogoStyle.scss";
 
 // tslint:disable-next-line:no-var-requires
 const logo = require("./logo.png");

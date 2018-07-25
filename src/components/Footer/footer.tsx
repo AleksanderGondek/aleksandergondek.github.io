@@ -3,7 +3,7 @@ import * as React from "react";
 import * as faHeart from "@fortawesome/fontawesome-free-solid/faHeart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import "./footer.scss";
+import "./FooterStyle.scss";
 
 class FooterComponent extends React.PureComponent<{}, {}> {
     render() {

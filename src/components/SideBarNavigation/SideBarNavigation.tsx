@@ -1,7 +1,7 @@
 import Link from "gatsby-link";
 import * as React from "react";
 
-import "./sideBarNavStyle.scss";
+import "./SideBarNavigationStyle.scss";
 
 class SideBarNavComponent extends React.PureComponent<{}, {}> {
     render() {

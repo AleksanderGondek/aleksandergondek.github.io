@@ -2,12 +2,12 @@ import * as React from "react";
 import Helmet from "react-helmet";
 import Sidebar from "react-sidebar";
 
-import { FooterComponent } from "../components/Footer/footer";
-import { MiniSideBarComponent } from "../components/MiniSideBar/sideBar";
-import { SideBarContentComponent } from "../components/SideBarContent/sideBarContent";
-import { ISiteMetadata, ISiteMetadataProps } from "../graphQl/siteMetadata";
+import { FooterComponent } from "../components/Footer/Footer";
+import { MiniSideBarComponent } from "../components/MiniSideBar/SideBar";
+import { SideBarContentComponent } from "../components/SideBarContent/SideBarContent";
+import { ISiteMetadata, ISiteMetadataProps } from "../graphQl/SiteMetadata";
 
-import "./defaultLayout.scss";
+import "./IndexStyle.scss";
 
 const mql = (typeof window !== undefined &&
              typeof window !== "undefined" &&
