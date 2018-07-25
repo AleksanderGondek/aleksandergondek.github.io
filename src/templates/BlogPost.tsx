@@ -24,7 +24,17 @@ interface IBlogPostTemplateProps extends IBlogPostsStatsProps {
     };
 }
 
-const blogPostByPathQuery = graphql`
+const BlogPostTemplate: React.StatelessComponent<IBlogPostTemplateProps> = ({ data }) => (
+    <div>
+        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <BlogPostStatsComponent data={data} />
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+    </div>
+);
+
+// This import does not work in other configuration (may it's the default keyword)
+export default BlogPostTemplate;
+export const blogPostByPathQuery = graphql`
   query blogPostByPath($path: String!) {
     markdownRemark(fields: { slug: { eq: $path } }) {
       html
@@ -42,13 +52,3 @@ const blogPostByPathQuery = graphql`
     }
   }
 `;
-
-const BlogPostTemplate: React.StatelessComponent<IBlogPostTemplateProps> = ({ data }) => (
-    <div>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
-        <BlogPostStatsComponent data={data} />
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-    </div>
-);
-
-export { IBlogPostTemplateProps, BlogPostTemplate, blogPostByPathQuery };

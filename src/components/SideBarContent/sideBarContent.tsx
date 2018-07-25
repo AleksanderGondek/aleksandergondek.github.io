@@ -1,8 +1,7 @@
-import * as React from "react";
-
 import * as faGithub from "@fortawesome/fontawesome-free-brands/faGithub";
 import * as faLinkedinIn from "@fortawesome/fontawesome-free-brands/faLinkedinIn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as React from "react";
 
 import { ISiteMetadataProps } from "../../graphQl/SiteMetadata";
 import { LogoComponent } from "../Logo/Logo";

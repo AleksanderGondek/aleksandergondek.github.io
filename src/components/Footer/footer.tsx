@@ -1,7 +1,6 @@
-import * as React from "react";
-
 import * as faHeart from "@fortawesome/fontawesome-free-solid/faHeart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as React from "react";
 
 import "./FooterStyle.scss";
 

@@ -1,7 +1,6 @@
-import * as React from "react";
-
 import * as faBars from "@fortawesome/fontawesome-free-solid/faBars";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as React from "react";
 
 import "./SideBarStyle.scss";
 

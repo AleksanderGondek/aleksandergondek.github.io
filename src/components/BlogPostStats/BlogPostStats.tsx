@@ -42,6 +42,7 @@ interface IBlogPostsStatsProps {
     data: IBlogPostStats;
 }
 
+export { BlogPostStatsComponent, IBlogPostStats, IBlogPostsStatsProps };
 export const blogPostsStatsQuery = graphql`
     fragment blogPostsStatsQuery on RootQueryType {
         markdownRemark {
@@ -55,5 +56,3 @@ export const blogPostsStatsQuery = graphql`
         }
     }
 `;
-
-export { BlogPostStatsComponent, IBlogPostStats, IBlogPostsStatsProps };

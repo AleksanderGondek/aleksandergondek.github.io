@@ -11,6 +11,7 @@ interface ISiteMetadataProps {
     data: ISiteMetadata;
 }
 
+export { ISiteMetadata, ISiteMetadataProps };
 export const siteMetadataQuery = graphql`
     fragment siteMetadataQuery on RootQueryType {
         site {
@@ -21,5 +22,3 @@ export const siteMetadataQuery = graphql`
         }
     }
 `;
-
-export { ISiteMetadata, ISiteMetadataProps };
