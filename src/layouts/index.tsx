@@ -1,5 +1,4 @@
 import * as React from "react";
-import Helmet from "react-helmet";
 import Sidebar from "react-sidebar";
 
 import { FooterComponent } from "../components/Footer/Footer";
@@ -58,13 +57,6 @@ class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLay
                 docked={this.state.sidebarDocked}
                 onSetOpen={this.toggleSidebarState}
             >
-                <Helmet
-                    title="Gatsby Default Starter"
-                    meta={[
-                        { name: "description", content: "Sample" },
-                        { name: "keywords", content: "sample, something" },
-                    ]}
-                />
                 <MiniSideBarComponent
                     isSideMenuOpened={this.state.sidebarDocked}
                     toggleSideBar={this.toggleSidebarState}
