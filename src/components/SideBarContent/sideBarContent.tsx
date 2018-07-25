@@ -4,9 +4,9 @@ import * as faGithub from "@fortawesome/fontawesome-free-brands/faGithub";
 import * as faLinkedinIn from "@fortawesome/fontawesome-free-brands/faLinkedinIn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { LogoComponent } from "../../components/Logo/logo";
-import { SideBarNavComponent } from "../../components/SideBarNavigation/sideBarNav";
 import { ISiteMetadataProps } from "../../graphQl/siteMetadata";
+import { LogoComponent } from "../Logo/logo";
+import { SideBarNavComponent } from "../SideBarNavigation/sideBarNav";
 
 import "./sideBarContentStyle.scss";
 
