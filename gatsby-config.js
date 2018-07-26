@@ -1,7 +1,14 @@
 module.exports = {
     siteMetadata: {
         title: "Alexander's Blog",
-        author: "Aleksander Gondek"
+        author: "Aleksander Gondek",
+        urlPrefix: "https://aleksandergondek.github.io",
+        shareUrls: {
+            twitter: "https://twitter.com/intent/tweet?url=",
+            reddit: "http://www.reddit.com/submit?url=",
+            ycombinator: "https://news.ycombinator.com/submitlink?u=",
+            linkedin: "http://www.linkedin.com/shareArticle?mini=true&url="
+        }
     },
     plugins: [
         "gatsby-plugin-react-helmet",
