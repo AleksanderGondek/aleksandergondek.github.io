@@ -30,7 +30,13 @@ const BlogIndexTemplate: React.StatelessComponent<IBlogIndexProps> = ({ pathCont
                     return (<BlogPostPreviewComponent node={post.node} key={index} />);
                 })
             }
-            <ol className="blogPostsPaging">{pages}</ol>
+            {
+                pages.length > 1 ? (
+                    <ol className="blogPostsPaging">{pages}</ol>
+                ) : (
+                    null
+                )
+            }
         </div>
     );
 };
