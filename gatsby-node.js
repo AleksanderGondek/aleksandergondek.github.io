@@ -66,7 +66,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
         _.uniq(tags).forEach(tag => {
             createPage({
-                path: `/tags/${_.kebabCase(tag)}/`,
+                path: `/tag/${_.kebabCase(tag)}/`,
                 component: blogTagTemplate,
                 context: {
                     tag,

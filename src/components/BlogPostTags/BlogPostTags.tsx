@@ -20,7 +20,7 @@ const BlogPostTagsComponent: React.StatelessComponent<IBlogPostTagsProps> = ({ d
         <ul>
             {data.markdownRemark.frontmatter.tags.map((tag, index, allTags) => (
                 <li key={index}>
-                    <Link to={`/tags/${_.kebabCase(tag)}/`}>
+                    <Link to={`/tag/${_.kebabCase(tag)}/`}>
                         {tag}
                     </Link>
                     {allTags.length - 1 !== index ? "," : ""}

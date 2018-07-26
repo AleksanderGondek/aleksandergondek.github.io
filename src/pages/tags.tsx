@@ -27,7 +27,7 @@ const TagsPage: React.StatelessComponent<ITagsPageProps> = ({ data }) => (
         <ul>
             {data.allMarkdownRemark.group.map((tagObject) => (
                 <li key={tagObject.fieldValue}>
-                    <Link to={`/tags/${_.kebabCase(tagObject.fieldValue)}/`}>
+                    <Link to={`/tag/${_.kebabCase(tagObject.fieldValue)}/`}>
                         {tagObject.fieldValue} ({tagObject.totalCount})
                     </Link>
                 </li>
