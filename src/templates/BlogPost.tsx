@@ -3,11 +3,10 @@ import Helmet from "react-helmet";
 
 import {BlogPostShareComponent, IBlogPostShareProps} from "../components/BlogPostShare/BlogPostShare";
 import {BlogPostStatsComponent, IBlogPostsStatsProps} from "../components/BlogPostStats/BlogPostStats";
-import {BlogPostTagsComponent, IBlogPostTagsProps} from "../components/BlogPostTags/BlogPostTags";
 
 import "./BlogPostStyle.scss";
 
-interface IBlogPostTemplateProps extends IBlogPostShareProps, IBlogPostsStatsProps, IBlogPostTagsProps {
+interface IBlogPostTemplateProps extends IBlogPostShareProps, IBlogPostsStatsProps {
     data: {
         site: {
             siteMetadata: {
@@ -65,7 +64,6 @@ const BlogPostTemplate: React.StatelessComponent<IBlogPostTemplateProps> = ({ da
 
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
 
-        <BlogPostTagsComponent data={data} />
         <BlogPostShareComponent data={data} />
     </div>
 );
