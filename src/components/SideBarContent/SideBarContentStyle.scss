@@ -1,0 +1,25 @@
+.sideBarContent {
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+
+    .externalPages {
+        text-align: center;
+
+        svg {
+            margin-left: 0.2em;
+            margin-right: 0.2em;
+        }
+
+        a, a:link, a:visited, a:active {
+            color: hsla(0,0%,0%,0.8);
+            text-decoration: none;
+            box-shadow: none;
+        }
+ 
+        a:hover {
+             color: hsl(230,55%,58%);
+             text-decoration: none;
+             box-shadow: none;
+         }
+    }
+}
