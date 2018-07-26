@@ -16,8 +16,8 @@ class SideBarContentComponent extends React.PureComponent<ISiteMetadataProps, {}
                 <LogoComponent data={this.props.data}/>
                 <SideBarNavComponent />
                 <div className="externalPages">
-                    <FontAwesomeIcon icon={faGithub} />
-                    <FontAwesomeIcon icon={faLinkedinIn} />
+                    <a href={this.props.data.site.siteMetadata.githubUrl}><FontAwesomeIcon icon={faGithub} /></a>
+                    <a href={this.props.data.site.siteMetadata.linkedInUrl}><FontAwesomeIcon icon={faLinkedinIn} /></a>
                 </div>
             </div>
         );

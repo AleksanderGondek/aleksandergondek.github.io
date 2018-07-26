@@ -3,6 +3,8 @@ interface ISiteMetadata {
         siteMetadata: {
             title: string,
             author: string;
+            githubUrl: string,
+            linkedInUrl: string,
         },
     };
 }
@@ -18,6 +20,8 @@ export const siteMetadataQuery = graphql`
             siteMetadata {
                 title
                 author
+                githubUrl,
+                linkedInUrl,
             }
         }
     }

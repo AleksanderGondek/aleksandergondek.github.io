@@ -1,8 +1,10 @@
 module.exports = {
     siteMetadata: {
-        title: "Alexander's Blog",
+        title: "Aleksander's Blog",
         author: "Aleksander Gondek",
         urlPrefix: "https://aleksandergondek.github.io",
+        githubUrl: "https://github.com/AleksanderGondek",
+        linkedInUrl: "https://www.linkedin.com/in/aleksander-gondek/",
         shareUrls: {
             twitter: "https://twitter.com/intent/tweet?url=",
             reddit: "http://www.reddit.com/submit?url=",
