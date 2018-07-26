@@ -14,21 +14,27 @@ interface IBlogPostTagsProps {
     };
 }
 
-const BlogPostTagsComponent: React.StatelessComponent<IBlogPostTagsProps> = ({ data }) => (
-    <div className="tagsList">
-        <strong>Tags:&nbsp;</strong>
-        <ul>
-            {data.markdownRemark.frontmatter.tags.map((tag, index, allTags) => (
-                <li key={index}>
-                    <Link to={`/tag/${_.kebabCase(tag)}/`}>
-                        {tag}
-                    </Link>
-                    {allTags.length - 1 !== index ? "," : ""}
-                </li>
-            ))}
-        </ul>
-    </div>
-);
+const BlogPostTagsComponent: React.StatelessComponent<IBlogPostTagsProps> = ({ data }) => {
+    if (data.markdownRemark.frontmatter.tags.length === 0) {
+        return (<div/>);
+    }
+
+    return (
+        <div className="tagsList">
+            <strong>Tags:&nbsp;</strong>
+            <ul>
+                {data.markdownRemark.frontmatter.tags.map((tag, index, allTags) => (
+                    <li key={index}>
+                        <Link to={`/tag/${_.kebabCase(tag)}/`}>
+                            {tag}
+                        </Link>
+                        {allTags.length - 1 !== index ? "," : ""}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
 
 export { BlogPostTagsComponent, IBlogPostTagsProps };
 export const blogPostTagsQuery = graphql`
