@@ -1,3 +1,8 @@
+import * as faLinkedin from "@fortawesome/fontawesome-free-brands/faLinkedin";
+import * as faRedditSquare from "@fortawesome/fontawesome-free-brands/faRedditSquare";
+import * as faTwitterSquare from "@fortawesome/fontawesome-free-brands/faTwitterSquare";
+import * as faYCombinator from "@fortawesome/fontawesome-free-brands/faYCombinator";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as React from "react";
 import Helmet from "react-helmet";
 
@@ -51,6 +56,26 @@ const BlogPostTemplate: React.StatelessComponent<IBlogPostTemplateProps> = ({ da
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         <BlogPostStatsComponent data={data} />
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        <div className="tagsList">
+            <strong>Tags:&nbsp;</strong>
+            <ul>
+                {data.markdownRemark.frontmatter.tags.map((tag, index, allTags) => (
+                    <li key={index}>
+                        {tag}
+                        {allTags.length - 1 !== index ? "," : ""}
+                    </li>
+                ))}
+            </ul>
+        </div>
+        <div className="shareList">
+            <ol>
+                <li><strong>Share:</strong></li>
+                <li><a href=""><FontAwesomeIcon icon={faTwitterSquare} size="lg" /></a></li>
+                <li><a href=""><FontAwesomeIcon icon={faRedditSquare} size="lg"/></a></li>
+                <li><a href=""><FontAwesomeIcon icon={faYCombinator} size="lg"/></a></li>
+                <li><a href=""><FontAwesomeIcon icon={faLinkedin} size="lg"/></a></li>
+            </ol>
+        </div>
     </div>
 );
 

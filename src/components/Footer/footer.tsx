@@ -11,7 +11,6 @@ class FooterComponent extends React.PureComponent<{}, {}> {
                 {/* TODO: Include copyright automatically */}
                 <p>
                     &copy; 2018 Aleksander Gondek;&nbsp;
-                    Made with <FontAwesomeIcon icon={faHeart} size="xs" /> in Gdansk, Poland;&nbsp;
                     Proudly powered by <a href="https://www.gatsbyjs.org">Gatsby.js</a>
                 </p>
             </div>
