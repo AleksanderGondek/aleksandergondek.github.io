@@ -74,17 +74,3 @@ interface IBlogPostsStatsProps {
 }
 
 export { BlogPostStatsComponent, IBlogPostStats, IBlogPostsStatsProps };
-export const blogPostsStatsQuery = graphql`
-    fragment blogPostsStatsQuery on RootQueryType {
-        markdownRemark {
-            frontmatter {
-                date(formatString: "DD MMMM YYYY, HH:MM z")
-                tags
-            }
-            timeToRead
-            wordCount {
-                words
-            }
-        }
-    }
-`;

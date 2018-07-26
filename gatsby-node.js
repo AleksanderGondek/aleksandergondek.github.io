@@ -4,12 +4,14 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// tslint:disable-next-line:no-var-requires
-const { createFilePath } = require("gatsby-source-filesystem");
-const _ = require("lodash");
 
-// tslint:disable-next-line:no-var-requires
+ 
+const { createFilePath } = require("gatsby-source-filesystem");
+
+const createPaginatedPages = require("gatsby-paginate");
+const _ = require("lodash");
 const path = require("path");
+
 const allMarkDownQuery = `{
     allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
@@ -17,13 +19,18 @@ const allMarkDownQuery = `{
     ) {
         edges {
             node {
+                excerpt
                 frontmatter {
-                    date
+                    date(formatString: "DD MMMM YYYY, HH:MM z")
                     title
                     tags
                 }
                 fields {
                     slug
+                }
+                timeToRead
+                proxyWordCount: wordCount {
+                    words
                 }
             }
         }
@@ -51,7 +58,16 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         if (result.errors) {
             return Promise.reject(result.errors);
         }
-        
+
+        createPaginatedPages({
+            edges: result.data.allMarkdownRemark.edges,
+            createPage: createPage,
+            pageTemplate: `src/templates/Index.tsx`,
+            pageLength: 10,
+            pathPrefix: "",
+            context: {}
+        });
+
         let tags = [];
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
             tags = tags.concat(node.frontmatter.tags);
