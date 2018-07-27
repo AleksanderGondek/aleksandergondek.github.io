@@ -1,7 +1,7 @@
 import Link from "gatsby-link";
 import * as React from "react";
 
-import { ISiteMetadataProps } from "../../graphQl/SiteMetadata";
+import { ISiteMetadataProps } from "../../contracts/SiteMetadata";
 
 import "./LogoStyle.scss";
 

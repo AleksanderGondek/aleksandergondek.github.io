@@ -5,40 +5,20 @@ import * as faYCombinator from "@fortawesome/fontawesome-free-brands/faYCombinat
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as React from "react";
 
+import { IPostWithSiteMetaProps } from "../../contracts/Post";
+
 import "./BlogPostShareStyle.scss";
 
-interface IBlogPostShareProps {
-    data: {
-        site: {
-            siteMetadata: {
-                urlPrefix: string,
-                shareUrls: {
-                    twitter: string,
-                    reddit: string,
-                    ycombinator: string,
-                    linkedin: string,
-                },
-            },
-        },
-        markdownRemark: {
-            frontmatter: {
-                title: string,
-            }
-            fields: {
-                slug: string,
-            },
-        },
-    };
-}
-
-const BlogPostShareComponent: React.StatelessComponent<IBlogPostShareProps> = ({ data }) => {
-    const blogPostFullUrl = data.site.siteMetadata.urlPrefix + data.markdownRemark.fields.slug;
+const BlogPostShareComponent: React.StatelessComponent<IPostWithSiteMetaProps> = ({ data }) => {
+    const blogPostFullUrl = data.site.siteMetadata.baseUrl + data.markdownRemark.fields.slug;
     const blogPostTitle = data.markdownRemark.frontmatter.title;
 
-    const twitterShare = data.site.siteMetadata.shareUrls.twitter + blogPostFullUrl + "&text=" + blogPostTitle;
-    const redditShare = data.site.siteMetadata.shareUrls.reddit + blogPostFullUrl + "&title=" + blogPostTitle;
-    const ycombinatorShare = data.site.siteMetadata.shareUrls.ycombinator + blogPostFullUrl + "&t=" + blogPostTitle;
-    const linkedinShare = data.site.siteMetadata.shareUrls.linkedin + blogPostFullUrl + "&title=" + blogPostTitle;
+    const twitterShare = data.site.siteMetadata.shareLinksPrefix.twitter + blogPostFullUrl + "&text=" + blogPostTitle;
+    const redditShare = data.site.siteMetadata.shareLinksPrefix.reddit + blogPostFullUrl + "&title=" + blogPostTitle;
+    // tslint:disable-next-line:max-line-length
+    const ycombinatorShare = data.site.siteMetadata.shareLinksPrefix.ycombinator + blogPostFullUrl + "&t=" + blogPostTitle;
+    // tslint:disable-next-line:max-line-length
+    const linkedinShare = data.site.siteMetadata.shareLinksPrefix.linkedin + blogPostFullUrl + "&title=" + blogPostTitle;
 
     return (
         <div className="shareList">
@@ -53,27 +33,4 @@ const BlogPostShareComponent: React.StatelessComponent<IBlogPostShareProps> = ({
     );
 };
 
-export { BlogPostShareComponent, IBlogPostShareProps };
-export const blogPostShareQuery = graphql`
-    fragment blogPostShareQuery on RootQueryType {
-        site {
-            siteMetadata {
-                urlPrefix
-                shareUrls {
-                    twitter
-                    reddit
-                    ycombinator
-                    linkedin
-                }
-            }
-        }
-        markdownRemark {
-            frontmatter {
-                title
-            }
-            fields {
-                slug
-            }
-        }
-    }
-`;
+export { BlogPostShareComponent };

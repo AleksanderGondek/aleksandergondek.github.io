@@ -2,29 +2,14 @@ import Link from "gatsby-link";
 import * as React from "react";
 import Helmet from "react-helmet";
 
-import { BlogPostPreviewComponent, IBlogPostPreviewProps } from "../components/BlogPostPreview/BlogPostPreview";
+import { BlogPostPreviewComponent } from "../components/BlogPostPreview/BlogPostPreview";
+import { IPagination } from "../contracts/Pagination";
+import { ISiteMetadata } from "../contracts/SiteMetadata";
 
 import "./IndexStyle.scss";
 
-interface IBlogIndexProps {
-    pathContext: {
-        additionalContext: {
-            siteMetadata: {
-                title: string,
-                author: string,
-                urlPrefix: string,
-            },
-        }
-        first: number,
-        group: IBlogPostPreviewProps[],
-        index: number,
-        last: number,
-        pageCount: number,
-    };
-}
-
-const BlogIndexTemplate: React.StatelessComponent<IBlogIndexProps> = ({ pathContext }) => {
-    const siteMetadata = pathContext.additionalContext.siteMetadata;
+const BlogIndexTemplate: React.StatelessComponent<IPagination> = ({ pathContext }) => {
+    const siteMetadata: ISiteMetadata = pathContext.additionalContext.siteMetadata;
     const pages = [];
     for (let index = 1; index <= pathContext.pageCount; index++) {
         const isCurrentPage = index === pathContext.index;
@@ -37,7 +22,7 @@ const BlogIndexTemplate: React.StatelessComponent<IBlogIndexProps> = ({ pathCont
             <Helmet
                 title={siteMetadata.title + " - " + "Home"}
                 meta={[
-                    { name: "author", content: siteMetadata.author},
+                    { name: "author", content: siteMetadata.author.fullName},
                     { name: "description", content: "List of all posts on blog" },
                     { name: "keywords", content: "sample, something" },
                     { property: "og:site_name", content: siteMetadata.title},

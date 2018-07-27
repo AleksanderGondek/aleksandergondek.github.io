@@ -4,7 +4,7 @@ import Sidebar from "react-sidebar";
 import { FooterComponent } from "../components/Footer/Footer";
 import { MiniSideBarComponent } from "../components/MiniSideBar/SideBar";
 import { SideBarContentComponent } from "../components/SideBarContent/SideBarContent";
-import { ISiteMetadata, ISiteMetadataProps } from "../graphQl/SiteMetadata";
+import { ISiteMetadata, ISiteMetadataProps } from "../contracts/SiteMetadata";
 
 import "./IndexStyle.scss";
 
@@ -15,7 +15,11 @@ const mql = (typeof window !== undefined &&
 interface IDefaultLayoutProps extends ISiteMetadataProps {
     location: { pathname: string };
     children: any;
-    data: ISiteMetadata;
+    data: {
+        site: {
+            siteMetadata: ISiteMetadata,
+        },
+    };
     mql: MediaQueryList;
     sidebarOpen: boolean;
     sidebarDocked: boolean;
@@ -72,7 +76,7 @@ class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLay
 
 export const rootQuery = graphql`
     query rootQuery {
-        ...siteMetadataQuery
+        ...SiteMetadataQuery
     }
 `;
 

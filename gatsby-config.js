@@ -1,16 +1,18 @@
 module.exports = {
     siteMetadata: {
-        title: "Aleksander's Blog",
-        author: "Aleksander Gondek",
-        urlPrefix: "https://aleksandergondek.github.io",
-        githubUrl: "https://github.com/AleksanderGondek",
-        linkedInUrl: "https://www.linkedin.com/in/aleksander-gondek/",
-        shareUrls: {
-            twitter: "https://twitter.com/intent/tweet?url=",
+        author: {
+            fullName: "Aleksander Gondek",
+            githubProfile: "https://github.com/AleksanderGondek",
+            linkedInProfie: "https://www.linkedin.com/in/aleksander-gondek/",
+        },
+        baseUrl: "https://aleksandergondek.github.io",
+        shareLinksPrefix: {
+            linkedin: "http://www.linkedin.com/shareArticle?mini=true&url=",
             reddit: "http://www.reddit.com/submit?url=",
-            ycombinator: "https://news.ycombinator.com/submitlink?u=",
-            linkedin: "http://www.linkedin.com/shareArticle?mini=true&url="
-        }
+            twitter: "https://twitter.com/intent/tweet?url=",
+            ycombinator:  "https://news.ycombinator.com/submitlink?u=",
+        },
+        title: "Aleksander's Blog"
     },
     plugins: [
         "gatsby-plugin-react-helmet",

@@ -6,9 +6,11 @@ import Link from "gatsby-link";
 import * as _ from "lodash";
 import * as React from "react";
 
+import { IPostProps } from "../../contracts/Post";
+
 import "./BlogPostStatsStyle.scss";
 
-class BlogPostStatsComponent extends React.PureComponent<IBlogPostsStatsProps, {}> {
+class BlogPostStatsComponent extends React.PureComponent<IPostProps, {}> {
     render() {
         const tagsPresent = this.props.data.markdownRemark.frontmatter.tags.length !== 0;
         return (
@@ -23,7 +25,7 @@ class BlogPostStatsComponent extends React.PureComponent<IBlogPostsStatsProps, {
                 <div className="column">
                     <FontAwesomeIcon icon={faClock} />&nbsp;&nbsp;
                     {this.props.data.markdownRemark.timeToRead} minutes
-                     ({this.props.data.markdownRemark.wordCount.words} words)
+                     ({this.props.data.markdownRemark.stats.words} words)
                 </div>
                 {
                     tagsPresent ? (
@@ -56,21 +58,4 @@ class BlogPostStatsComponent extends React.PureComponent<IBlogPostsStatsProps, {
     }
 }
 
-interface IBlogPostStats {
-    markdownRemark: {
-        frontmatter: {
-            date: string,
-            tags: string[],
-        }
-        timeToRead: number,
-        wordCount: {
-            words: number,
-        },
-    };
-}
-
-interface IBlogPostsStatsProps {
-    data: IBlogPostStats;
-}
-
-export { BlogPostStatsComponent, IBlogPostStats, IBlogPostsStatsProps };
+export { BlogPostStatsComponent };

@@ -5,6 +5,8 @@ import * as _ from "lodash";
 import * as React from "react";
 import Helmet from "react-helmet";
 
+import { ISiteMetadata } from "../contracts/SiteMetadata";
+
 import "./TagsStyle.scss";
 
 interface ITagsPageGroup {
@@ -15,10 +17,7 @@ interface ITagsPageGroup {
 interface ITagsPageProps {
     data: {
         site: {
-            siteMetadata: {
-                title: string,
-                author: string,
-            },
+            siteMetadata: ISiteMetadata,
         },
         allMarkdownRemark: {
             group: ITagsPageGroup[],
@@ -31,7 +30,7 @@ const TagsPage: React.StatelessComponent<ITagsPageProps> = ({ data }) => (
         <Helmet
             title={data.site.siteMetadata.title + " - All tags listing"}
             meta={[
-                { name: "author", content: data.site.siteMetadata.author},
+                { name: "author", content: data.site.siteMetadata.author.fullName},
                 { name: "description", content: "Listing of all tags" },
                 { name: "keywords", content: "sample, something" },
                 { property: "og:site_name", content: data.site.siteMetadata.title},
@@ -64,12 +63,7 @@ const TagsPage: React.StatelessComponent<ITagsPageProps> = ({ data }) => (
 export default TagsPage;
 export const tagsPageQuery = graphql`
     query tagsPageQuery {
-        site {
-            siteMetadata {
-                title
-                author
-            }
-        }
+        ...SiteMetadataQuery
         allMarkdownRemark(
             limit: 3000
         ) {

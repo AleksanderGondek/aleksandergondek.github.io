@@ -1,51 +1,18 @@
 import * as React from "react";
 import Helmet from "react-helmet";
 
-import {BlogPostShareComponent, IBlogPostShareProps} from "../components/BlogPostShare/BlogPostShare";
-import {BlogPostStatsComponent, IBlogPostsStatsProps} from "../components/BlogPostStats/BlogPostStats";
+import {BlogPostShareComponent } from "../components/BlogPostShare/BlogPostShare";
+import {BlogPostStatsComponent } from "../components/BlogPostStats/BlogPostStats";
+import { IPostWithSiteMetaProps } from "../contracts/Post";
 
 import "./BlogPostStyle.scss";
 
-interface IBlogPostTemplateProps extends IBlogPostShareProps, IBlogPostsStatsProps {
-    data: {
-        site: {
-            siteMetadata: {
-                title: string,
-                author: string,
-                urlPrefix: string,
-                shareUrls: {
-                    twitter: string,
-                    reddit: string,
-                    ycombinator: string,
-                    linkedin: string,
-                },
-            },
-        },
-        markdownRemark: {
-            html: string
-            excerpt: string
-            frontmatter: {
-                date: string,
-                title: string,
-                tags: string[],
-            },
-            fields: {
-                slug: string,
-            },
-            timeToRead: number,
-            wordCount: {
-                words: number,
-            },
-        },
-    };
-}
-
-const BlogPostTemplate: React.StatelessComponent<IBlogPostTemplateProps> = ({ data }) => (
+const BlogPostTemplate: React.StatelessComponent<IPostWithSiteMetaProps> = ({ data }) => (
     <div>
         <Helmet
             title={data.site.siteMetadata.title + " - " + data.markdownRemark.frontmatter.title}
             meta={[
-                { name: "author", content: data.site.siteMetadata.author},
+                { name: "author", content: data.site.siteMetadata.author.fullName},
                 { name: "description", content: data.markdownRemark.excerpt },
                 { name: "keywords", content: "sample, something" },
                 { property: "og:site_name", content: data.site.siteMetadata.title},
@@ -71,35 +38,10 @@ const BlogPostTemplate: React.StatelessComponent<IBlogPostTemplateProps> = ({ da
 // This import does not work in other configuration (may it's the default keyword)
 export default BlogPostTemplate;
 export const blogPostByPathQuery = graphql`
-  query blogPostByPath($path: String!) {
-    site {
-        siteMetadata {
-            title
-            author
-            urlPrefix
-            shareUrls {
-                twitter
-                reddit
-                ycombinator
-                linkedin
-            }
+    query blogPostByPath($path: String!) {
+        ...SiteMetadataQuery
+        markdownRemark(fields: { slug: { eq: $path } }) {
+            ...MarkdownRemarkQuery
         }
     }
-    markdownRemark(fields: { slug: { eq: $path } }) {
-      html
-      excerpt
-      frontmatter {
-        date(formatString: "DD MMMM YYYY, HH:MM z")
-        title
-        tags
-      }
-      fields {
-          slug
-      }
-      timeToRead
-      wordCount {
-          words
-      }
-    }
-  }
 `;

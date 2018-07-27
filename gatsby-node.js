@@ -15,8 +15,19 @@ const path = require("path");
 const allMarkDownQuery = `{
     site {
         siteMetadata {
+            author {
+                fullName,
+                githubProfile,
+                linkedInProfie
+            }
+            baseUrl
+            shareLinksPrefix {
+                linkedin
+                reddit
+                twitter
+                ycombinator
+            }
             title
-            author
         }
     }
     allMarkdownRemark(
@@ -35,7 +46,7 @@ const allMarkDownQuery = `{
                     slug
                 }
                 timeToRead
-                proxyWordCount: wordCount {
+                stats: wordCount {
                     words
                 }
             }

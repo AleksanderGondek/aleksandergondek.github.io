@@ -1,5 +1,3 @@
-import * as faHeart from "@fortawesome/fontawesome-free-solid/faHeart";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as React from "react";
 
 import "./FooterStyle.scss";
@@ -15,7 +13,6 @@ class FooterComponent extends React.PureComponent<{}, {}> {
 
         return (
             <div className="footer">
-                {/* TODO: Include copyright automatically */}
                 <p>
                     &copy; {copyRightYearText} Aleksander Gondek;&nbsp;
                     Proudly powered by <a href="https://www.gatsbyjs.org">Gatsby.js</a>
