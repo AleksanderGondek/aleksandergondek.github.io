@@ -5,7 +5,7 @@
  */
 
 
- 
+
 const { createFilePath } = require("gatsby-source-filesystem");
 
 const createPaginatedPages = require("gatsby-paginate");
@@ -37,6 +37,7 @@ const allMarkDownQuery = `{
     }
 }`;
 
+
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     const { createNodeField } = boundActionCreators
     if (node.internal.type === "MarkdownRemark") {
@@ -52,7 +53,6 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 exports.createPages = ({ boundActionCreators, graphql }) => {
     const { createPage } = boundActionCreators;
     const blogPostTemplate = path.resolve(`src/templates/BlogPost.tsx`);
-    const blogTagTemplate = path.resolve(`src/templates/BlogTag.tsx`);
 
     return graphql(allMarkDownQuery).then(result => {
         if (result.errors) {
@@ -81,9 +81,16 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         });
 
         _.uniq(tags).forEach(tag => {
-            createPage({
-                path: `/tag/${_.kebabCase(tag)}/`,
-                component: blogTagTemplate,
+            const edges = _.filter(result.data.allMarkdownRemark.edges, ({ node }) => {
+                return _.includes(node.frontmatter.tags, tag);
+            });
+
+            createPaginatedPages({
+                edges: edges,
+                createPage: createPage,
+                pageTemplate: `src/templates/BlogTag.tsx`,
+                pageLength: 10,
+                pathPrefix: `tag/${_.kebabCase(tag)}`,
                 context: {
                     tag,
                 },
