@@ -13,6 +13,12 @@ const _ = require("lodash");
 const path = require("path");
 
 const allMarkDownQuery = `{
+    site {
+        siteMetadata {
+            title
+            author
+        }
+    }
     allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
@@ -65,7 +71,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             pageTemplate: `src/templates/Index.tsx`,
             pageLength: 10,
             pathPrefix: "",
-            context: {}
+            context: {
+                "siteMetadata": result.data.site.siteMetadata,
+            }
         });
 
         let tags = [];
@@ -92,7 +100,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
                 pageLength: 10,
                 pathPrefix: `tag/${_.kebabCase(tag)}`,
                 context: {
-                    tag,
+                    "siteMetadata": result.data.site.siteMetadata,
+                    "tag": tag,
                 },
             });
         });

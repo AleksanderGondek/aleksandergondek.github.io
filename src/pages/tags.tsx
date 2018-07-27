@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "gatsby-link";
 import * as _ from "lodash";
 import * as React from "react";
+import Helmet from "react-helmet";
 
 import "./TagsStyle.scss";
 
@@ -27,6 +28,21 @@ interface ITagsPageProps {
 
 const TagsPage: React.StatelessComponent<ITagsPageProps> = ({ data }) => (
     <div className="blogTagsList">
+        <Helmet
+            title={data.site.siteMetadata.title + " - All tags listing"}
+            meta={[
+                { name: "author", content: data.site.siteMetadata.author},
+                { name: "description", content: "Listing of all tags" },
+                { name: "keywords", content: "sample, something" },
+                { property: "og:site_name", content: data.site.siteMetadata.title},
+                // tslint:disable-next-line:max-line-length
+                { property: "og:title", content: data.site.siteMetadata.title + " - All tags listing"},
+                { property: "og:description", content: "Listing of all tags"},
+                { property: "og:type", content: "website"},
+                { property: "og:image", content: ""},
+                { property: "og:url", content: ""},
+            ]}
+        />
         <h1>Tags</h1>
         <p>List of all tags present on the blog</p>
         <ul>

@@ -1,11 +1,17 @@
 import Link from "gatsby-link";
 import * as React from "react";
+import Helmet from "react-helmet";
 
 import { BlogPostPreviewComponent, IBlogPostPreviewProps } from "../components/BlogPostPreview/BlogPostPreview";
 
 interface IBlogTagProps {
     pathContext: {
         additionalContext: {
+            siteMetadata: {
+                title: string,
+                author: string,
+                urlPrefix: string,
+            },
             tag: string,
         }
         first: number,
@@ -17,6 +23,7 @@ interface IBlogTagProps {
 }
 
 const BlogTagTemplate: React.StatelessComponent<IBlogTagProps> = ({ pathContext }) => {
+    const siteMetadata = pathContext.additionalContext.siteMetadata;
     const pages = [];
     const tagName = pathContext.additionalContext.tag;
     const tagPageUrl = `/tag/${tagName}/`;
@@ -28,6 +35,20 @@ const BlogTagTemplate: React.StatelessComponent<IBlogTagProps> = ({ pathContext 
 
     return (
         <div>
+            <Helmet
+                title={siteMetadata.title + ` - '${tagName}' tag posts`}
+                meta={[
+                    { name: "author", content: siteMetadata.author},
+                    { name: "description", content: `Posts with '${tagName}' tag` },
+                    { name: "keywords", content: "sample, something" },
+                    { property: "og:site_name", content: siteMetadata.title},
+                    { property: "og:title", content: siteMetadata.title + ` - '${tagName}' tag posts`},
+                    { property: "og:description", content: `Posts with '${tagName}' tag`},
+                    { property: "og:type", content: "website"},
+                    { property: "og:image", content: ""},
+                    { property: "og:url", content: ""},
+                ]}
+            />
             <h1>{tagName}</h1>
             <p>Posts with '{tagName}' tag</p>
             <div>

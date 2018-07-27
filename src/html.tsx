@@ -1,5 +1,8 @@
 import * as React from "react";
 
+// tslint:disable-next-line:no-var-requires
+const favicon = require("./favicon.png");
+
 let stylesStr: string;
 if (process.env.NODE_ENV === "production") {
     try {
@@ -40,6 +43,7 @@ module.exports = class HTML extends React.Component<IHtmlProps, {}> {
                         name="viewport"
                         content="width=device-width, initial-scale=1, shrink-to-fit=no"
                     />
+                    <link rel="shortcut icon" type="image/png" href={favicon} />
                     {this.props.headComponents}
                     {css}
                 </head>
