@@ -7,6 +7,23 @@ tags: ["test", "foo", "bar"]
 ## Lorem
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lectus mauris, fermentum viverra condimentum nec, gravida ac felis. Aliquam aliquam nisi eget leo laoreet facilisis. Mauris fermentum dapibus molestie. Morbi sed est urna. Curabitur ex velit, blandit sed ultrices sit amet, aliquet nec turpis. Sed at fermentum lorem, dictum tincidunt massa. Suspendisse varius lacinia cursus. Duis malesuada pharetra lacus vel posuere. Etiam metus elit, dictum nec ligula sed, efficitur vestibulum dui.
 
+```rust
+// This is a comment, and will be ignored by the compiler
+// You can test this code by clicking the "Run" button over there ->
+// or if prefer to use your keyboard, you can use the "Ctrl + Enter" shortcut
+
+// This code is editable, feel free to hack it!
+// You can always return to the original code by clicking the "Reset" button ->
+
+// This is the main function
+fn main() {
+    // The statements here will be executed when the compiled binary is called
+
+    // Print text to the console
+    println!("Hello World!");
+}
+```
+
 ### Ipsum
 Phasellus gravida quam odio, ac venenatis metus tristique at. Morbi elit justo, vehicula id volutpat eu, fringilla non arcu. Nulla maximus faucibus mauris a faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi fermentum rutrum risus ac hendrerit. In urna quam, bibendum vitae est vitae, aliquam tincidunt nisl. Nunc quis rhoncus quam, a condimentum eros. Aliquam erat volutpat. Aenean pretium purus auctor vehicula iaculis. Cras porta, orci sit amet suscipit tristique, dui nisl feugiat eros, in vulputate elit nunc nec ipsum. Etiam vitae tortor a ipsum viverra dapibus. Mauris id enim eu ante malesuada pharetra ut vitae arcu. Proin accumsan egestas leo, at pellentesque nisl bibendum non. Nam non lorem eget leo efficitur tincidunt ac vitae mauris.
 

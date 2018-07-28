@@ -7,6 +7,7 @@ import { SideBarContentComponent } from "../components/SideBarContent/SideBarCon
 import { ISiteMetadata, ISiteMetadataProps } from "../contracts/SiteMetadata";
 
 import "./IndexStyle.scss";
+import "./prismJsGithubHighlight.css";
 
 const mql = (typeof window !== undefined &&
              typeof window !== "undefined" &&
