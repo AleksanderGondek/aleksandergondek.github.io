@@ -1,39 +1,35 @@
 import * as React from "react";
 import Helmet from "react-helmet";
 
-import {BlogPostShareComponent } from "../components/BlogPostShare/BlogPostShare";
-import {BlogPostStatsComponent } from "../components/BlogPostStats/BlogPostStats";
+import { BlogHelmetComponent } from "../components/BlogHelmet/BlogHelmet";
+import { BlogPostShareComponent } from "../components/BlogPostShare/BlogPostShare";
+import { BlogPostStatsComponent } from "../components/BlogPostStats/BlogPostStats";
+import { IPageMetadata } from "../contracts/PageMetadata";
 import { IPostWithSiteMetaProps } from "../contracts/Post";
 
 import "./BlogPostStyle.scss";
 
-const BlogPostTemplate: React.StatelessComponent<IPostWithSiteMetaProps> = ({ data }) => (
-    <div>
-        <Helmet
-            title={data.site.siteMetadata.title + " - " + data.markdownRemark.frontmatter.title}
-            meta={[
-                { name: "author", content: data.site.siteMetadata.author.fullName},
-                { name: "description", content: data.markdownRemark.excerpt },
-                { name: "keywords", content: "sample, something" },
-                { property: "og:site_name", content: data.site.siteMetadata.title},
-                // tslint:disable-next-line:max-line-length
-                { property: "og:title", content: data.site.siteMetadata.title + " - " + data.markdownRemark.frontmatter.title},
-                { property: "og:description", content: data.markdownRemark.excerpt},
-                { property: "og:type", content: "website"},
-                { property: "og:image", content: ""},
-                { property: "og:url", content: ""},
-            ]}
-        />
+const BlogPostTemplate: React.StatelessComponent<IPostWithSiteMetaProps> = ({ data }) => {
+    const pageMetadata: IPageMetadata = {
+        additionalKeywords: data.markdownRemark.frontmatter.tags,
+        description: data.markdownRemark.excerpt,
+        title: data.markdownRemark.frontmatter.title,
+        url: data.markdownRemark.fields.slug,
+    };
 
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
+    return (
+        <div>
+            <BlogHelmetComponent pageMetadata={pageMetadata} siteMetadata={data.site.siteMetadata} />
 
-        <BlogPostStatsComponent data={data} />
+            <h1>{data.markdownRemark.frontmatter.title}</h1>
+            <BlogPostStatsComponent data={data} />
 
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+            <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
 
-        <BlogPostShareComponent data={data} />
-    </div>
-);
+            <BlogPostShareComponent data={data} />
+        </div>
+    );
+};
 
 // This import does not work in other configuration (may it's the default keyword)
 export default BlogPostTemplate;

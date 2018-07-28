@@ -5,6 +5,7 @@ interface ISiteMetadata {
         linkedInProfie: string,
     };
     baseUrl: string;
+    keywords: string[];
     shareLinksPrefix: {
         linkedin: string,
         reddit: string,
@@ -32,6 +33,7 @@ export const SiteMetadataQuery = graphql`
                     linkedInProfie
                 }
                 baseUrl
+                keywords
                 shareLinksPrefix {
                     linkedin
                     reddit

@@ -1,57 +1,37 @@
-import Link from "gatsby-link";
 import * as React from "react";
-import Helmet from "react-helmet";
 
+import { BlogHelmetComponent } from "../components/BlogHelmet/BlogHelmet";
 import { BlogPostPreviewComponent } from "../components/BlogPostPreview/BlogPostPreview";
+import { PagingComponent } from "../components/Paging/Paging";
+import { IPageMetadata } from "../contracts/PageMetadata";
 import { IPagination } from "../contracts/Pagination";
 import { ISiteMetadata } from "../contracts/SiteMetadata";
 
-const BlogTagTemplate: React.StatelessComponent<IPagination> = ({ pathContext }) => {
+const BlogTagTemplate: React.StatelessComponent<IPagination> = ( paginationProps ) => {
+    const pathContext = paginationProps.pathContext;
     const siteMetadata: ISiteMetadata = pathContext.additionalContext.siteMetadata;
-    const pages = [];
     const tagName = pathContext.additionalContext.tag;
-    const tagPageUrl = `/tag/${tagName}/`;
-    for (let index = 1; index <= pathContext.pageCount; index++) {
-        const isCurrentPage = index === pathContext.index;
-        const linkUrl = index !== 1 ? tagPageUrl + `${index}` : tagPageUrl;
-        pages.push(<li className={isCurrentPage ? "current" : ""} key={index}><Link to={linkUrl}>{index}</Link></li>);
-    }
+    const pageMetadata: IPageMetadata = {
+        additionalKeywords: [],
+        description: `'${tagName}' tag posts`,
+        title: `Posts with '${tagName}' tag`,
+        url: pathContext.index !== 1 ? `/${tagName}/${pathContext.index}` : `/${tagName}`,
+    };
 
     return (
         <div>
-            <Helmet
-                title={siteMetadata.title + ` - '${tagName}' tag posts`}
-                meta={[
-                    { name: "author", content: siteMetadata.author.fullName},
-                    { name: "description", content: `Posts with '${tagName}' tag` },
-                    { name: "keywords", content: "sample, something" },
-                    { property: "og:site_name", content: siteMetadata.title},
-                    { property: "og:title", content: siteMetadata.title + ` - '${tagName}' tag posts`},
-                    { property: "og:description", content: `Posts with '${tagName}' tag`},
-                    { property: "og:type", content: "website"},
-                    { property: "og:image", content: ""},
-                    { property: "og:url", content: ""},
-                ]}
-            />
+            <BlogHelmetComponent pageMetadata={pageMetadata} siteMetadata={siteMetadata} />
+
             <h1>{tagName}</h1>
             <p>Posts with '{tagName}' tag</p>
-            <div>
-                {
-                    pathContext.group.map((post, index) => {
-                        return (<BlogPostPreviewComponent node={post.node} key={index} />);
-                    })
-                }
-                {
-                    pages.length > 1 ? (
-                        <ol className="blogPostsPaging">{pages}</ol>
-                    ) : (
-                        null
-                    )
-                }
-            </div>
+            {
+                pathContext.group.map((post, index) => {
+                    return (<BlogPostPreviewComponent node={post.node} key={index} />);
+                })
+            }
+            <PagingComponent pages={paginationProps} urlPrefix={tagName}/>
         </div>
     );
 };
 
-// This import does not work in other configuration (may it's the default keyword)
 export default BlogTagTemplate;

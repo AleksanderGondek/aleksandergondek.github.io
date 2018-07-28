@@ -6,6 +6,7 @@ module.exports = {
             linkedInProfie: "https://www.linkedin.com/in/aleksander-gondek/",
         },
         baseUrl: "https://aleksandergondek.github.io",
+        keywords: ["test"],
         shareLinksPrefix: {
             linkedin: "http://www.linkedin.com/shareArticle?mini=true&url=",
             reddit: "http://www.reddit.com/submit?url=",

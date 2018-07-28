@@ -21,6 +21,7 @@ const allMarkDownQuery = `{
                 linkedInProfie
             }
             baseUrl
+            keywords
             shareLinksPrefix {
                 linkedin
                 reddit
