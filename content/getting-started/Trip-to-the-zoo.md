@@ -1,7 +1,10 @@
 ---
 date: "2018-07-26T12:10:00.000Z"
 title: "A Trip To the Zoo - Part 0"
-tags: ["test", "foo", "bar"]
+tags: 
+    - "test"
+    - "foo"
+    - "bar"
 ---
 
 ![Rust crab](rust-crab.png)

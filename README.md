@@ -9,8 +9,8 @@ This repository contains source-code for my website, as well as its contents.
 
 Branches
 ---
-* master - Github pages in "deployed" version, only final, website artifacts checked-in
-* development - on-going development and project source-code
+    * master - Github pages in "deployed" version, only final, website artifacts checked-in
+    * development - on-going development and project source-code
 
 
 License
