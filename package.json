@@ -29,11 +29,11 @@
         "@types/react-dom": "^16.0.4",
         "@types/react-helmet": "^5.0.5",
         "@types/react-sidebar": "^2.2.3",
-        "gatsby": "^1.9.238",
-        "gatsby-cli": "^1.1.46",
-        "gatsby-link": "^1.6.39",
+        "gatsby": "^1.9.277",
+        "gatsby-cli": "^1.1.58",
+        "gatsby-link": "^1.6.46",
         "gatsby-paginate": "^1.0.16",
-        "gatsby-plugin-react-helmet": "^2.0.8",
+        "gatsby-plugin-react-helmet": "^2.0.11",
         "gatsby-plugin-sass": "^1.0.23",
         "gatsby-plugin-sharp": "^1.6.48",
         "gatsby-plugin-typescript": "^1.4.18",
@@ -52,11 +52,9 @@
         "remark-preset-lint-recommended": "^3.0.2",
         "stylelint": "^9.4.0",
         "stylelint-config-standard": "^18.2.0",
+        "tslint": "^5.11.0",
+        "typescript": "^3.0.1",
         "typography-theme-de-young": "^0.16.9"
-    },
-    "devDependencies": {
-        "tslint": "^5.9.1",
-        "typescript": "^2.7.2"
     },
     "remarkConfig": {
         "plugins": [
