@@ -15,7 +15,8 @@
         "lint:md": "remark .",
         "lint:scss": "stylelint src/**/*.scss --syntax scss",
         "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
-        "test": "yarn run lint && exit 1"
+        "test": "yarn run lint && exit 1",
+        "write": "plop --plopfile ./generators/plopfile.js"
     },
     "dependencies": {
         "@fortawesome/fontawesome": "^1.1.5",
@@ -43,6 +44,7 @@
         "gatsby-source-filesystem": "1.5.30",
         "gatsby-transformer-remark": "^1.7.44",
         "lodash": "^4.17.10",
+        "plop": "^2.0.0",
         "prismjs": "^1.15.0",
         "react-helmet": "^5.2.0",
         "react-sidebar": "^2.3.2",
@@ -65,8 +67,14 @@
         "extends": "stylelint-config-standard",
         "rules": {
             "indentation": 4,
-            "at-rule-no-unknown": [ 
-                true, { "ignoreAtRules": ["include", "mixin"] }
+            "at-rule-no-unknown": [
+                true,
+                {
+                    "ignoreAtRules": [
+                        "include",
+                        "mixin"
+                    ]
+                }
             ]
         }
     }
