@@ -7,8 +7,6 @@ import { BlogPostStatsComponent } from "../components/BlogPostStats/BlogPostStat
 import { IPageMetadata } from "../contracts/PageMetadata";
 import { IPostWithSiteMetaProps } from "../contracts/Post";
 
-import "./BlogPostStyle.scss";
-
 const BlogPostTemplate: React.StatelessComponent<IPostWithSiteMetaProps> = ({ data }) => {
     const pageMetadata: IPageMetadata = {
         additionalKeywords: data.markdownRemark.frontmatter.tags,

@@ -11,9 +11,10 @@
     "scripts": {
         "build": "gatsby build",
         "develop": "gatsby develop",
-        "lint": "yarn run lint:ts lint:md",
-        "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
+        "lint": "yarn run lint:ts && yarn run lint:scss && yarn run lint:md",
         "lint:md": "remark .",
+        "lint:scss": "stylelint src/**/*.scss --syntax scss",
+        "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
         "test": "yarn run lint && exit 1"
     },
     "dependencies": {
@@ -47,6 +48,8 @@
         "react-sidebar": "^2.3.2",
         "remark-cli": "^5.0.0",
         "remark-preset-lint-recommended": "^3.0.2",
+        "stylelint": "^9.4.0",
+        "stylelint-config-standard": "^18.2.0",
         "typography-theme-de-young": "^0.16.9"
     },
     "devDependencies": {
@@ -57,5 +60,11 @@
         "plugins": [
             "remark-preset-lint-recommended"
         ]
+    },
+    "stylelint": {
+        "extends": "stylelint-config-standard",
+        "rules": {
+            "indentation": 4
+        }
     }
 }

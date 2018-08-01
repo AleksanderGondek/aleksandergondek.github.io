@@ -7,14 +7,17 @@
         margin-right: 1em;
 
         label {
-            a, a:link, a:visited, a:active {
-                color: hsla(0,0%,0%,0.8);
+            a,
+            a:link,
+            a:visited,
+            a:active {
+                color: hsla(0, 0%, 0%, 0.8);
                 text-decoration: none;
                 box-shadow: none;
             }
-    
+
             a:hover {
-                color: hsl(230,55%,58%);
+                color: hsl(230, 55%, 58%);
                 text-decoration: none;
                 box-shadow: none;
             }

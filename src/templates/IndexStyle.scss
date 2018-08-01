@@ -1,6 +1,10 @@
 .current {
-    a, a:link, a:visited, a:active, a:hover {
-        color: hsla(0,0%,0%,0.8);
+    a,
+    a:link,
+    a:visited,
+    a:active,
+    a:hover {
+        color: hsla(0, 0%, 0%, 0.8);
         text-decoration: none;
         box-shadow: none;
     }
