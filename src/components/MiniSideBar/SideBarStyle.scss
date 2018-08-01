@@ -1,6 +1,8 @@
+@import "../../layouts/_CommonStyles";
+
 .miniSideBar {
     width: 2em;
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: $theme-black-text-colour;
     position: fixed;
     top: 0;
     bottom: 0;

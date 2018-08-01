@@ -1,0 +1,21 @@
+$theme-black-text-colour: hsla(0, 0%, 0%, 0.8);
+$theme-link-text-colour: hsl(230, 55%, 58%);
+
+@mixin link-no-decoration {
+    a,
+    a:link,
+    a:visited,
+    a:active {
+        color: $theme-black-text-colour;
+        text-decoration: none;
+        box-shadow: none;
+    }
+}
+
+@mixin link-hover-no-decoration {
+    a:hover {
+        color: $theme-link-text-colour;
+        text-decoration: none;
+        box-shadow: none;
+    }
+}

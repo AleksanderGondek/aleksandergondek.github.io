@@ -1,10 +1,12 @@
+@import "../layouts/_CommonStyles";
+
 .current {
     a,
     a:link,
     a:visited,
     a:active,
     a:hover {
-        color: hsla(0, 0%, 0%, 0.8);
+        color: $theme-black-text-colour;
         text-decoration: none;
         box-shadow: none;
     }
