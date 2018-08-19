@@ -15,8 +15,32 @@ jobs:
       - run:
           name: Build
           command: yarn run build
+  deploy:
+    docker:
+      - image: circleci/node:8-stretch-browsers
+    working_directory: ~/blog
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "bb:43:4a:3b:ff:e0:f8:87:81:30:58:5d:4b:8f:4b:dd"
+      - checkout
+      - run:
+          name: Install node dependencies
+          command: yarn
+      - run:
+          name: Build
+          command: yarn run build
+      - run:
+          name: Deploy
+          command: bash deployment.sh
 workflows:
   version: 2
   main_flow:
     jobs:
       - lint_and_build
+      - deploy:
+          requires:
+            - lint_and_build
+          filters:
+            branches:
+              only: development
