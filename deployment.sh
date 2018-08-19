@@ -9,9 +9,11 @@ find . -maxdepth 2
 git branch -r
 git branch
 
+git branch -d master
 git fetch --force origin "master:remotes/origin/master"
 git checkout master
-git pull
+
+git status
 
 echo 'State of the directory after checkout & pull'
 find . -maxdepth 2
