@@ -12,6 +12,9 @@ git pull master
 echo 'State of the directory after checkout & pull'
 find . -maxdepth 2
 
+echo 'State of .gitignore before clean'
+cat .gitignore
+
 git reset --hard
 git clean -fd
 
