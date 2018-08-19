@@ -46,6 +46,3 @@ workflows:
       - deploy:
           requires:
             - lint_and_build
-          filters:
-            branches:
-              only: development
