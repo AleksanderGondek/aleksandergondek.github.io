@@ -1,5 +1,8 @@
 #!/bin/bash
 
+git reset --hard
+git clean -fd
+
 git checkout master
 git pull
 
