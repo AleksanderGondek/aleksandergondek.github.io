@@ -23,6 +23,11 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "bb:43:4a:3b:ff:e0:f8:87:81:30:58:5d:4b:8f:4b:dd"
+      run: 
+        name: "Configure git defaults"
+        command: |
+          git config --global user.email "gondekaleksander@hotmail.com"
+          git config --global user.name "Aleksander Gondek"
       - checkout
       - run:
           name: Install node dependencies
