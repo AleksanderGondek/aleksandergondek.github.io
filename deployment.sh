@@ -9,7 +9,7 @@ find . -maxdepth 2
 git branch -r
 git branch
 
-git checkout --track origin/master
+git checkout master
 
 echo 'State of the directory after checkout & pull'
 find . -maxdepth 2

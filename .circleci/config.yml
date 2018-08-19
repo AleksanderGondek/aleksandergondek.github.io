@@ -37,7 +37,7 @@ jobs:
           command: yarn run build
       - run:
           name: Deploy
-          command: bash deployment.sh
+          command: bash -e deployment.sh
 workflows:
   version: 2
   main_flow:
