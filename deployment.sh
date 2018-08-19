@@ -6,8 +6,10 @@ git clean -fd
 echo 'State of the directory before checkout'
 find . -maxdepth 2
 
-git checkout master
-git pull master
+git branch -r
+git branch
+
+git checkout --track origin/master
 
 echo 'State of the directory after checkout & pull'
 find . -maxdepth 2
