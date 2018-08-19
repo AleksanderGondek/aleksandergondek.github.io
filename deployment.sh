@@ -1,10 +1,10 @@
 #!/bin/bash
 
 git checkout master
+git pull
 
 git reset --hard
-git clean -fd --exclude=public
-git pull
+git clean -fd
 
 mv public/* .
 rm -r public
