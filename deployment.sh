@@ -4,6 +4,7 @@ git checkout master
 
 git reset --hard
 git clean -fd --exclude=public
+git pull
 
 mv public/* .
 rm -r public
