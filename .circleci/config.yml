@@ -32,13 +32,6 @@ jobs:
       - run:
           name: Install node dependencies
           command: yarn
-      - run:
-          name: Build
-          command: yarn run build
-      - run:
-          name: Deploy
-          command: bash -e deployment.sh
-workflows:
   version: 2
   main_flow:
     jobs:
