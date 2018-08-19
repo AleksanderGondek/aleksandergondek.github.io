@@ -11,6 +11,7 @@
     "scripts": {
         "build": "gatsby build",
         "develop": "gatsby develop",
+        "deploy": "gatsby build && gh-pages -d public -b master",
         "lint": "yarn run lint:ts && yarn run lint:scss && yarn run lint:md",
         "lint:md": "remark .",
         "lint:scss": "stylelint src/**/*.scss --syntax scss",
@@ -43,6 +44,7 @@
         "gatsby-remark-prismjs": "^2.0.5",
         "gatsby-source-filesystem": "1.5.30",
         "gatsby-transformer-remark": "^1.7.44",
+        "gh-pages": "^1.2.0",
         "lodash": "^4.17.10",
         "plop": "^2.0.0",
         "prismjs": "^1.15.0",
@@ -59,9 +61,18 @@
     "remarkConfig": {
         "plugins": [
             "remark-preset-lint-recommended",
-            ["remark-lint-list-item-indent", false],
-            ["remark-lint-no-shortcut-reference-link", false],
-            ["remark-lint-no-undefined-references", false]
+            [
+                "remark-lint-list-item-indent",
+                false
+            ],
+            [
+                "remark-lint-no-shortcut-reference-link",
+                false
+            ],
+            [
+                "remark-lint-no-undefined-references",
+                false
+            ]
         ]
     },
     "stylelint": {
