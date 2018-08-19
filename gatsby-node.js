@@ -39,7 +39,7 @@ const allMarkDownQuery = `{
             node {
                 excerpt
                 frontmatter {
-                    date(formatString: "DD MMMM YYYY, HH:MM z")
+                    date(formatString: "DD MMMM YYYY")
                     title
                     tags
                 }

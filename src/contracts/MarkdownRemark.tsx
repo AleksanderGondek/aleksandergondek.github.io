@@ -23,7 +23,7 @@ export const MarkdownRemarkQuery = graphql`
             slug
         }
         frontmatter {
-            date(formatString: "DD MMMM YYYY, HH:MM z")
+            date(formatString: "DD MMMM YYYY")
             title
             tags
         }
