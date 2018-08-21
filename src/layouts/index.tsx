@@ -61,6 +61,7 @@ class DefaultLayout extends React.PureComponent<IDefaultLayoutProps, IDefaultLay
                 open={this.state.sidebarOpen}
                 docked={this.state.sidebarDocked}
                 onSetOpen={this.toggleSidebarState}
+                sidebarClassName="whiteBackground"
             >
                 <MiniSideBarComponent
                     isSideMenuOpened={this.state.sidebarDocked}
