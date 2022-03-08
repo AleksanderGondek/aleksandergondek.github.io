@@ -1,6 +1,5 @@
 My personal website
 ---
-[![CircleCI](https://circleci.com/gh/AleksanderGondek/aleksandergondek.github.io/tree/development.svg?style=svg)](https://circleci.com/gh/AleksanderGondek/aleksandergondek.github.io/tree/development)
 ![License](https://img.shields.io/badge/License-Apache%20License%202.0-blue.svg?style=flat-square)
 ![Typescript](https://img.shields.io/badge/Typescript-2.7-blue.svg?style=flat-square)
 
@@ -9,13 +8,13 @@ This repository contains source-code for my website, as well as its contents.
 
 Branches
 ---
-    * master - Github pages in "deployed" version, only final, website artifacts checked-in
-    * development - on-going development and project source-code
+    * old deployment - Github pages in "deployed" version, only final, website artifacts checked-in
+    * master - on-going development and project source-code
 
 
 License
 ---
-Copyright 2018 Aleksander Gondek
+Copyright 2022222222222222222222222222222222222222222222 Aleksander Gondek
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
