@@ -1,4 +1,11 @@
 {
+    "adidoks-zola-theme": {
+        "rev": "5c698271c460046034605b743a15196b12e32887",
+        "sha256": "1gphd3703nlmsvw9l9n9jdjg51swqcwxpwrn82j62l50z3dr9j6n",
+        "type": "tarball",
+        "url": "https://github.com/aaranxu/adidoks/archive/5c698271c460046034605b743a15196b12e32887.tar.gz",
+        "url_template": "https://github.com/aaranxu/adidoks/archive/<rev>.tar.gz"
+    },
     "nixpkgs": {
         "branch": "nixos-unstable",
         "description": "Nix Packages collection",

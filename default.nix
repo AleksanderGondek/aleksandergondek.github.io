@@ -1,5 +1,7 @@
 {localSystem ? builtins.currentSystem, ...} @ args: let
   external_sources = import ./nix/sources.nix;
+
+  adidoks-zola-theme = external_sources.adidoks-zola-theme.outPath;
   nixpkgs_import_args = {
     inherit localSystem;
     config = {};
@@ -9,17 +11,26 @@
   buildBlog = nixpkgs.stdenv.mkDerivation {
     name = "aleksandergondek.github.io-blog";
 
-    # No sources
-    dontUnpack = true;
+    src = builtins.path {
+      path = ./.;
+      name = "aleksandergondek.github.io-blog-src";
+    };
 
-    installPhase = ''
-      mkdir $out
-      touch $out/example
+    nativeBuildInputs = [
+      nixpkgs.zola
+    ];
+
+    buildPhase = ''
+      rm -rf ./themes/*
+      mkdir -p ./themes/adidoks
+      cp -R  ${adidoks-zola-theme}/. ./themes/adidoks/
+      zola build -o $out
     '';
   };
 
   devShell = nixpkgs.mkShell {
     name = "agondek-blog-dev-shell";
+
     packages = with nixpkgs; [
       alejandra
       helix
@@ -27,6 +38,10 @@
       statix
       zola
     ];
+
+    shellHook = ''
+      ln -s -f ${adidoks-zola-theme} ./themes/adidoks
+    '';
   };
 
   serveBlog = {};
