@@ -1,0 +1,22 @@
++++
+title = "Privacy Policy"
+description = "We do not use cookies and we do not collect any personal data."
+date = 2024-02-12T20:00:00+02:00
+draft = false
+
+[extra]
+class = "page single"
++++
+
+__TLDR__: I do not use cookies and I do not collect any personal data.
+
+## Website visitors
+
+- No personal information is collected.
+- No information is stored in the browser.
+- No information is shared with, sent to or sold to third-parties.
+- No information is shared with advertising companies.
+- No information is mined and harvested for personal and behavioral trends.
+- No information is monetized.
+
+Effective Date: _12th February 2024_

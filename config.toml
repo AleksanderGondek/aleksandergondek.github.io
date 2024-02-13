@@ -1,6 +1,6 @@
 base_url = "https://aleksandergondek.github.io"
 
-title = "aleksandergondek.github.io"
+title = "$ aleksandergondek.github.io"
 description = "Description of my blog, to be filled in"
 
 theme = "adidoks"
@@ -12,8 +12,7 @@ generate_feed = true
 author = "Aleksander Gondek"
 
 taxonomies = [
-  {name = "authors"}, # Basic definition: no feed or pagination
-  {name = "tags", feed = true}, # each tag will have its own feed
+  {name = "categories", feed = true}, # each tag will have its own feed
 ]
 
 # Whether to automatically compile all Sass files in the sass directory
@@ -76,10 +75,9 @@ og_locale = "en_GB"
 [extra.schema]
 type = "Organization"
 logo = "logo-doks.png"
-linked_in = "https://www.linkedin.com/in/AleksanderGondek"
+linked_in = "https://www.linkedin.com/in/aleksander-gondek"
 github = "https://github.com/AleksanderGondek"
 section = "blog" # see config.extra.main~url
-## Sitelinks Search Box
 site_links_search_box = false
 
 # Menu items
@@ -100,8 +98,20 @@ name = "GitHub"
 pre = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>'
 url = "https://github.com/AleksanderGondek"
 post = "v0.1.0"
+weight = 10
+
+[[extra.menu.social]]
+name = "Linkedin"
+pre = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin" style="margin-left:-8px;"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>'
+url = "https://www.linkedin.com/in/aleksander-gondek"
+post = "v0.1.0"
 weight = 20
 
 # Footer contents
 [extra.footer]
 info = 'Powered by <a href="https://www.getzola.org/">Zola</a>'
+
+[[extra.footer.nav]]
+name = "Privacy Policy"
+url = "/privacy-policy/"
+weight = 10
