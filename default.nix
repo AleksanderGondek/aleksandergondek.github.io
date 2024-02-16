@@ -33,6 +33,8 @@
 
     packages = with nixpkgs; [
       alejandra
+      cocogitto
+      git
       helix
       niv
       statix
