@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aleksandergondek.github.io/sitemap.xml
