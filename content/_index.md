@@ -1,10 +1,9 @@
 +++
 title = "Welcome to my blog!"
 
-# The homepage contents
 [extra]
 profile_pic = "https://picsum.photos/225/225"
-welcome_msg = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in fermentum purus, ac viverra nunc. Sed nec sapien in velit lacinia dictum vel et justo. Vivamus gravida velit vel blandit eleifend. In hac habitasse platea dictumst. Fusce id purus in enim feugiat viverra ut vitae nibh. Integer gravida libero nunc, eget vestibulum magna semper vel. Pellentesque finibus a felis non venenatis. Etiam commodo, dui vehicula egestas venenatis, justo lorem venenatis nunc, sit amet sodales nisi diam eget mauris. Suspendisse id libero eget leo venenatis sollicitudin. Etiam id nunc at mauris porta semper."
+welcome_msg = "Having over 10+ years of experience in wide range of *-Engineering roles, from Software through System Builds to Software Reliability, I have developed strong opinions and unique insights towards challenges and technologies present in each of those areas, as well as some that cross those boundaries. Said experience made me lean heavily towards tools that are reliable and designed to solve particular problems at hand. This blog is an attempt to share my knowledge (and ramblings), in a structured way that hopefully other engineers will find useful."
 current_techs = [
     "Rust",
     "Nix",
