@@ -1,7 +1,7 @@
 base_url = "https://aleksandergondek.github.io"
 
 title = "$ aleksandergondek.github.io"
-description = "Description of my blog, to be filled in"
+description = "Journals on making a well-crafted software"
 
 theme = "adidoks"
 
@@ -46,7 +46,7 @@ title_separator = "|"  # set as |, -, _, etc
 title_addition = "Title addition to be filled in."
 
 # Set date format in blog publish metadata
-timeformat = "%B %e, %Y" # e.g. June 14, 2021
+timeformat = "%e %B %Y" # rust chrono::format:strftime
 timezone = "Europe/Warsaw"
 
 # Edit page on reposity or not
