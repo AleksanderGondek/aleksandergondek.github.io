@@ -42,6 +42,7 @@
     ];
 
     shellHook = ''
+      rm -f ./themes/adidoks
       ln -s -f ${adidoks-zola-theme} ./themes/adidoks
     '';
   };
