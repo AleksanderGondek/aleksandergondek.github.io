@@ -1,0 +1,53 @@
+name: "build-and-publish"
+run-name: "Build and publish blog from commit ${{ github.sha }}"
+
+on:
+  push: ["master"]
+
+jobs:
+  build-and-publish:
+    id: "build-and-publish"
+    name: "build-and-publish"
+    runs-on: ["x86", "linux"]
+    steps:
+      - name: "Install nix"
+        uses: cachix/install-nix-action@v22
+
+      - name: "Checkout 'master' branch of the repo"
+        uses: actions/checkout@v4
+        with:
+          clean: true
+          path: master
+
+      - name: "Checkout 'published' branch of the repo"
+        uses: actions/checkout@v4
+        with:
+          clean: true
+          path: published
+
+      - name: "Build blog release"
+        shell: bash
+        run: |2
+          cd master && nix-build default.nix -A buildBlog -o public
+
+      - name: "Copy over the release to published branch"
+        shell: bash
+        run: |2
+          cp -Rf ./master/public/. ./published/
+
+      - name: "Publish blog release"
+        shell: bash
+        run: |2
+          set -euo pipefail
+          
+          cd ./published
+          
+          if [[ ! `git status --porcelain` ]]; then
+            echo "No changes published to the blog."
+            exit 0;
+          fi;
+
+          git add -A
+          git -c user.name='Github Action' -c user.email='actions@github.com' commit -m "$(date --iso-8601) blog release"
+          git push
+
