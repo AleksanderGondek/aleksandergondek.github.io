@@ -64,7 +64,7 @@ library = "katex"  # options: "katex", "mathjax". default is "katex".
 [extra.open]
 enable = true
 # this image will be used as fallback if a page has no image of its own
-image = "doks.png"
+image = "icons/logo.png"
 twitter_site = ""
 twitter_creator = "AleksanderGondek"
 facebook_author = "AleksanderGondek"
@@ -74,7 +74,7 @@ og_locale = "en_GB"
 ## JSON-LD
 [extra.schema]
 type = "Organization"
-logo = "logo-doks.png"
+logo = "icons/logo.png"
 linked_in = "https://www.linkedin.com/in/aleksander-gondek"
 github = "https://github.com/AleksanderGondek"
 section = "blog" # see config.extra.main~url
