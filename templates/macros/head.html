@@ -75,8 +75,6 @@ updated_time="2021-05-01T08:08:08+08:00"
 {% endif %}
 <meta name="twitter:title" content="{{ title }}">
 <meta name="twitter:description" content="{{ description }}">
-<meta name="twitter:site" content="@{{ config.extra.open.twitter_site }}">
-<meta name="twitter:creator" content="@{{ config.extra.open.twitter_creator }}">
 
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ description }}">
@@ -111,8 +109,6 @@ updated_time="2021-05-01T08:08:08+08:00"
 <meta property="og:video" content="{{ get_url(path=video) }}">
 {% endfor %}
 {% endif %}
-<meta property="article:publisher" content="https://www.facebook.com/{{ config.extra.open.facebook_publisher }}">
-<meta property="article:author" content="https://www.facebook.com/{{ config.extra.open.facebook_author }}">
 <meta property="og:locale" content="{{ config.extra.open.og_locale }}">
 {% endif %}
 

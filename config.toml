@@ -1,7 +1,7 @@
 base_url = "https://aleksandergondek.github.io"
 
 title = "$ aleksandergondek.github.io"
-description = "Journals on making a well-crafted software"
+description = "Journal on making a well-crafted software"
 
 theme = "adidoks"
 
@@ -43,7 +43,7 @@ theme_color = "#fff"
 
 # More about site's title
 title_separator = "|"  # set as |, -, _, etc
-title_addition = "Title addition to be filled in."
+title_addition = "Journal on making a well-crafted software"
 
 # Set date format in blog publish metadata
 timeformat = "%e %B %Y" # rust chrono::format:strftime
@@ -65,10 +65,6 @@ library = "katex"  # options: "katex", "mathjax". default is "katex".
 enable = true
 # this image will be used as fallback if a page has no image of its own
 image = "icons/logo.png"
-twitter_site = ""
-twitter_creator = "AleksanderGondek"
-facebook_author = "AleksanderGondek"
-facebook_publisher = "AleksanderGondek"
 og_locale = "en_GB"
 
 ## JSON-LD
