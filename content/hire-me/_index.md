@@ -8,14 +8,9 @@ draft = true
 class = "page single"
 +++
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut tortor nec leo molestie aliquam in in leo. Aenean accumsan suscipit felis volutpat congue. Suspendisse risus leo, faucibus at enim id, consectetur posuere risus. Nullam sed ultricies nibh. Pellentesque ornare fermentum volutpat. Mauris dui dolor, porta nec ultrices blandit, venenatis vel urna. Phasellus quis neque pulvinar, convallis tellus ut, consequat risus. Fusce ullamcorper mollis iaculis. Donec auctor turpis in semper mollis. Quisque ut quam eget nulla hendrerit volutpat eget eu massa. Maecenas pharetra elit non vehicula rutrum. Nam euismod elit vitae feugiat imperdiet. Nullam mattis augue eget nulla mattis pellentesque.
+I professionally overcome challenges, materializing big visions in the form of reliable and robust solutions.
 
-* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-* Suspendisse vehicula lectus vitae augue convallis aliquam.
-* Sed ultricies mauris nec cursus mattis.
-* Fusce ornare odio quis ante vehicula sodales.
-* Mauris ut turpis id ligula lacinia volutpat dapibus vitae massa.
-* Aenean placerat tortor vitae metus auctor, ut feugiat nisl fermentum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut tortor nec leo molestie aliquam in in leo. Aenean accumsan suscipit felis volutpat congue. Suspendisse risus leo, faucibus at enim id, consectetur posuere risus. Nullam sed ultricies nibh. Pellentesque ornare fermentum volutpat. Mauris dui dolor, porta nec ultrices blandit, venenatis vel urna. Phasellus quis neque pulvinar, convallis tellus ut, consequat risus. Fusce ullamcorper mollis iaculis. Donec auctor turpis in semper mollis. Quisque ut quam eget nulla hendrerit volutpat eget eu massa. Maecenas pharetra elit non vehicula rutrum. Nam euismod elit vitae feugiat imperdiet. Nullam mattis augue eget nulla mattis pellentesque.
 
 Nam nisi ante, suscipit a lectus id, ultrices condimentum felis. Nulla tristique ac tellus vel congue. Suspendisse ultrices diam tortor. Ut scelerisque est non neque dictum varius quis at metus. Phasellus id pulvinar mi, id fermentum sem. Nunc at tincidunt quam. Pellentesque odio odio, feugiat vitae semper vel, tempor nec massa. Etiam sit amet lectus felis. Morbi finibus nunc at augue sodales rutrum. Proin semper hendrerit vulputate. Vivamus odio nisl, accumsan aliquet ornare finibus, tempus eu metus. Nulla sit amet pharetra nulla.
 
@@ -52,6 +47,8 @@ Migrated large mono-repository encompassing C++ and Python code to Bazel, while 
 *Key domains: monitoring, high-availability, devops*
 
 *Duration: 1 year*
+
+Designing and implementing deployment system and processes which target Kubernetes in myriad of target environments and k8s flavours (AKS, EKS, GKE, Openshift, self-hosted, ...)
 
 #### Tech lead @ Nordea Bank
 *Key technologies: Scala, Cats, Kubernetes, Nix, Bazel, Python*
