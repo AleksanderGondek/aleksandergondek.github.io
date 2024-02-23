@@ -1,18 +1,16 @@
 +++
 title = "Hire me!"
 description = "Delivering reliable and tailored solutions"
-date = 2024-02-21T09:00:00+02:00
-draft = true
+date = 2024-02-23T20:49:00+02:00
+draft = false
 
 [extra]
 class = "page single"
 +++
 
-I professionally overcome challenges, materializing big visions in the form of reliable and robust solutions.
+I professionally overcome challenges, materialize big visions and ensure they are delivered as reliable and robust solutions. Due to contextual constraints and demands, each problem is unique and I specialise in solving them in a tailored manner.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut tortor nec leo molestie aliquam in in leo. Aenean accumsan suscipit felis volutpat congue. Suspendisse risus leo, faucibus at enim id, consectetur posuere risus. Nullam sed ultricies nibh. Pellentesque ornare fermentum volutpat. Mauris dui dolor, porta nec ultrices blandit, venenatis vel urna. Phasellus quis neque pulvinar, convallis tellus ut, consequat risus. Fusce ullamcorper mollis iaculis. Donec auctor turpis in semper mollis. Quisque ut quam eget nulla hendrerit volutpat eget eu massa. Maecenas pharetra elit non vehicula rutrum. Nam euismod elit vitae feugiat imperdiet. Nullam mattis augue eget nulla mattis pellentesque.
-
-Nam nisi ante, suscipit a lectus id, ultrices condimentum felis. Nulla tristique ac tellus vel congue. Suspendisse ultrices diam tortor. Ut scelerisque est non neque dictum varius quis at metus. Phasellus id pulvinar mi, id fermentum sem. Nunc at tincidunt quam. Pellentesque odio odio, feugiat vitae semper vel, tempor nec massa. Etiam sit amet lectus felis. Morbi finibus nunc at augue sodales rutrum. Proin semper hendrerit vulputate. Vivamus odio nisl, accumsan aliquet ornare finibus, tempus eu metus. Nulla sit amet pharetra nulla.
+**Currently used technologies:** Rust, Nix, Starlark, Bazel, Kubernetes, Python, Go-lang,
 
 ## Contact
 
