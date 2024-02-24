@@ -29,7 +29,7 @@
         <section class="section container-fluid mt-n3 pb-3">
             <div class="row justify-content-center">
                 <div class="col-lg-12 text-center">
-                    <img src="{{ section.extra.profile_pic }}" class="mt-5 mb-5 rounded-circle" alt="...">
+                    <img src="{{ config.base_url | safe }}/images/me-welcome.png" class="mt-5 mb-5 rounded-circle" alt="My mug">
                     <h2 class="mt-0">{{ section.title | default(value="N/A") }}</h2>
                     <p class="mt-5">{{ section.extra.welcome_msg | default(value="N/A") }}</p>
                     {% if section.extra.current_techs %}
