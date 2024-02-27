@@ -7,7 +7,7 @@ draft = true
 template = "blog/page.html"
 
 [taxonomies]
-categories = ["Topic One"]
+categories = ["Topic Two"]
 
 +++
 
