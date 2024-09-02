@@ -1,7 +1,6 @@
 +++
 title = "Hire me!"
 description = "Delivering reliable and tailored solutions"
-date = 2024-02-23T20:49:00+02:00
 draft = false
 
 [extra]

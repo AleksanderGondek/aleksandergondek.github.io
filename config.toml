@@ -8,7 +8,7 @@ theme = "adidoks"
 default_language = "en"
 output_dir = "public"
 
-generate_feed = true
+generate_feeds = true
 author = "Aleksander Gondek"
 
 taxonomies = [
