@@ -24,6 +24,8 @@
       rm -rf ./themes/*
       mkdir -p ./themes/adidoks
       cp -R  ${adidoks-zola-theme}/. ./themes/adidoks/
+      # Imporant:
+      # The template does not work well with zola >= 0.19.0
       zola build -o $out
     '';
   };
